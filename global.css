@@ -1,0 +1,541 @@
+/* This file contains CSS rules that extend/overwrite the default rules set in the ximeraServer
+ * 
+ * As of 2024-11
+ *  - this works only on the new (KULeuven-adapted) ximeraServer
+ *  - this file (re-)translates labels into English
+ *
+ * In the (near?) future, this file should
+ *   - be renamed xmHtmlStyle.css   (to sync with xmPreamble.tex and xmPrintStyle.sty)
+ *   - become (almost) empty by default, because the ximeraServer default settings will becom English again
+ */ 
+ 
+
+
+
+/* *************************** Save, then use Ctrl F5 on the webpage whenever you make changes to this file. **********   */
+
+
+/* ************************************** Changing the Font! ***********************************************   */
+
+
+/* Adjust overall page sizing and color to match PDF proportions.  Change font size here. */
+.main-activity {
+    font-size: 22px !important;
+    line-height: 1.55 !important;
+    color: hsl(0, 0%, 10%) !important;
+}
+
+/* Keep paragraphs produced inside problems and theorem-like blocks at the normal lesson size. */
+p.noindent,
+.problem-environment p,
+.problem-environment .noindent,
+.theorem-like p,
+.theorem-like .noindent {
+    font-size: inherit !important;
+    line-height: 1.55 !important;
+}
+
+/* *********************************** Done changing the font ****************************************** */
+
+.xmhint::before {
+    content: "Show hint" counter(hint_number, notfirst);
+}
+  
+.xmhint.ui-state-active::before {
+    content: "Hide hint " counter(hint_number, notfirst);
+}
+  
+.xmoplossing::before {
+    content: "Show solution";
+}
+
+.xmoplossing.ui-state-active::before {
+    content: "Hide solution";
+}
+
+.xmoplossing-content::before {
+    content: "Solution: ";
+	font-weight: bold;
+}
+
+.xmuitkomst::before {
+    content: "Show answer";
+}
+
+.xmuitkomst.ui-state-active::before {
+    content: "Hide answer";
+}
+
+.xmuitkomst-content::before {
+    content: "Answer: ";
+	font-weight: bold;
+}
+.exercise::before {
+	content: "exercise" attr(numbered) ".";
+}
+.definition::before {
+	content: "definition" attr(numbered) ".";
+}
+.remark::before {
+	content: "remark" attr(numbered) ".";
+}
+.proposition::before {
+	content: "proposition" attr(numbered) ".";
+}
+.example::before {
+	content: "example" attr(numbered) ".";
+}
+.warning::before {
+	content: "warning" attr(numbered) ".";
+}
+.theorem::before {
+     content: "theorem" attr(numbered) ".";
+}
+.explanation::before {
+      content: "explanation" attr(numbered) ".";
+}
+.exploration::before {
+      content: "exploration" attr(numbered) ".";
+}
+.formula::before {
+      content: "formula" attr(numbered) ".";
+}
+.problem::before {
+      content: "problem" attr(numbered) ".";
+}
+.notation::before {
+      content: "notation" attr(numbered) ".";
+}
+
+/* Overwrite labels */ 
+span.hint-text {
+ display: none;
+}
+
+button.btn-reveal-hint::after {
+ content: "Show hint";
+}
+button.btn-reveal-hint.oplossing::after {
+ content: "Show solution";
+}
+
+.xmerase a span.xmhidden-small {
+  display: none;
+}
+
+.xmerase a::after {
+ content: "Clear";
+}
+
+span.show-check-text {
+  display: none !important;
+}
+
+button.btn-ximera-check::after {
+  content: "Check answer";
+}
+
+span.show-answer-text {
+  display: none !important;
+}
+
+span.show-answer-large button.btn-ximera-show-answer::after {
+  content: "Reveal answer";
+}
+
+#math-edit-button span {
+  display: none;
+}
+
+button#math-edit-button::before {
+  content: "Math Editor";
+}
+
+
+/* Vorige/volgende */
+a.next-activity::before {
+  content: "Next";
+}
+span#next-activity-label {
+  display: none;
+}
+a.prev-activity::after {
+  content: "Previous";
+}
+span#prev-activity-label {
+  display: none;
+}
+
+.en-text {
+      display: initial;
+}
+.nl-text {
+      display: none;
+}
+
+
+/* Multi-Lingual Formatting */
+
+.multiple-choice[titletext]::before {
+	/* Numbered everything in CSS is causing trouble.  TeX should decide the numbering. */
+	/* content:"${nameOfClass} " counter($counterToIncrement) ". ";*/
+	content:attr(titletext);
+}
+
+/*
+We setup the problem-environment(s) default display/title text next.
+*/
+
+/* Set the problem-environment default(s):
+Note that, because there are a number of types, we need a "default" for each type - I don't know how to do this other than hard-code.
+Also note: We may want to decide, as a team, what the default text should *actually* be, e.g. capitalize or not, spacing, etc.
+*/
+
+.problem::before {
+	content:"problem" attr(numbered) ".";
+ }
+
+.exploration::before {
+	content:"exploration" attr(numbered) ".";
+ }
+
+.exercise::before {
+	content:"exercise" attr(numbered) ".";
+ }
+
+.question::before {
+	content:"question" attr(numbered) ".";
+ }
+/*
+If the problem environment(s) have the "titletext" attribute defined, then overwrite the above default with the newly defined default text.
+Note: This is used to do automatic translation, but could also be used to change the default text in *any* way we would want,
+e.g. use "P1", "Problem 1", "Prob 1", "Exciting Problem 1", etc.
+*/
+.problem-environment[titletext]::before {
+	/* Numbered everything in CSS is causing trouble.  TeX should decide the numbering. */
+	/* content:"${nameOfClass} " counter($counterToIncrement) ". ";*/
+	content:attr(titletext) attr(numbered) ".";
+}
+
+.theorem-like[titletext]::before {
+	content:attr(titletext);
+}
+
+.feedback[titletext]::before {
+	content:attr(titletext) ": ";
+}
+
+
+/* Outcome Formatting */
+
+.outcomeContent {
+	/* display: none; */
+	color: rgb(51, 0, 181);
+}
+.outcomeHead {
+	text-align: center;
+	font-weight: bold;
+}
+/* 	  
+.outcomeHead:hover + .outcomeContent {
+	display: block;
+} */
+
+
+
+/*  **************************** Modifications made with the help of AI. *****************************  */
+/*  **************************** Save, then use CTRL F5 in HTML to apply changes. *****************************  */
+
+/* Only applies spacing if it is inside the main-activity container, not the TOC. */
+.main-activity p, 
+.main-activity .problem, 
+.main-activity .theorem, 
+.main-activity .definition, 
+.main-activity .exercise, 
+.main-activity .remark, 
+.main-activity h2, 
+.main-activity h3 {
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+    display: block;
+}
+
+/* List spacing specifically for the lesson */
+.main-activity li {
+    margin-bottom: 1rem !important;
+    margin-top: 1rem !important;
+}
+
+/* The item[] fix - also scoped to the activity */
+.main-activity li[data-label=""]::marker, 
+.main-activity li[data-label=" "]::marker, 
+.main-activity li[data-label="~"]::marker {
+    content: none !important;
+}
+
+/* Make the Ximera multiple-choice container sit closer to the preceding sentence */
+.problem-environment div.multiple-choice,
+.problem-environment div.select-all,
+.main-activity div.multiple-choice,
+.main-activity div.select-all {
+    margin-top: -1rem !important;
+    margin-bottom: 0.3rem !important;
+    display: block !important;
+}
+
+/* Give the choice buttons a bit of separation without adding extra top space */
+.problem-environment div.multiple-choice > span.choice,
+.problem-environment div.select-all > span.choice,
+.main-activity div.multiple-choice > span.choice,
+.main-activity div.select-all > span.choice {
+    display: inline-block !important;
+    margin-right: 0.4rem !important;
+    margin-top: -1rem !important;
+    margin-bottom: 0.1rem !important;
+}
+
+/* Reduce the gap between the preceding math block and the choices block */
+.problem-environment .mathjax-block + div.multiple-choice,
+.problem-environment .mathjax-block + div.select-all {
+    margin-top: 0.1rem !important;
+}
+
+/* Reduce the gap between the paragraph before the choices and the choices block */
+.problem-environment p + div.multiple-choice,
+.problem-environment .noindent + div.multiple-choice,
+.problem-environment p + div.select-all,
+.problem-environment .noindent + div.select-all,
+.main-activity p + div.multiple-choice,
+.main-activity .noindent + div.multiple-choice,
+.main-activity p + div.select-all,
+.main-activity .noindent + div.select-all {
+    margin-top: -1rem !important;
+}
+
+/* Give the following answer paragraph a bit more room after the choices */
+.problem-environment div.multiple-choice + p,
+.problem-environment div.multiple-choice + .noindent,
+.problem-environment div.select-all + p,
+.problem-environment div.select-all + .noindent {
+    margin-top: 0.35rem !important;
+}
+
+
+/* 1. Removes the default lavender background for Problem and uses Glaucous Blue */
+div[titletext*="Problem"] {
+    background-color: #fdfdfd !important; /* Glaucous Blue Tint */
+    border-left: 8px solid #9fb4d3 !important; /* Glaucous Blue Bar */
+    padding: 1.5em !important;
+    color: #333 !important;
+}
+
+/* Keep all problem and theorem-like content at the normal lesson size even when it wraps or uses line breaks */
+.problem-environment,
+.problem-environment p,
+.problem-environment .noindent,
+.problem-environment strong,
+.problem-environment em,
+.problem-environment a,
+.problem-environment li {
+    font-size: 22px !important;
+    line-height: 1.55 !important;
+}
+
+/* Let MathJax handle superscripts and degree symbols without clipping them */
+.problem-environment .mathjax-inline,
+.problem-environment .mathjax-env,
+.problem-environment .MathJax,
+.problem-environment .MathJax span,
+.problem-environment .mjx-chtml,
+.problem-environment .mjx-container,
+.problem-environment .mjx-math {
+    font-size: inherit !important;
+    line-height: 1.45 !important;
+    overflow: visible !important;
+}
+
+.problem-environment p,
+.problem-environment .noindent {
+    margin-top: 1rem !important;
+    margin-bottom: 0 !important;
+}
+
+/* This ensures the VERY FIRST paragraph doesn't have an extra gap at the top */
+.problem-environment > p:first-of-type,
+.problem-environment > .noindent:first-of-type {
+    margin-top: 0 !important;
+}
+
+/* Adds spacing to anything inside a center environment */
+.main-activity .center {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+    display: block !important;
+}
+
+/* Adds vertical space before and after TikZ/Image environments */
+.main-activity .image-environment {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+    display: block !important;
+}
+
+/* Removes bullets from any itemize list nested inside an enumerate list for nice indenting */
+.main-activity ol li ul {
+    list-style-type: none !important;
+}
+
+/* Force the first level of lists inside a problem to use (a), (b), (c) */
+.main-activity .problem ol {
+    list-style-type: lower-alpha !important;
+}
+
+/* Adds the parentheses around the letter: (a), (b), etc. */
+.main-activity .problem ol > li::marker {
+    content: "(" counter(list-item, lower-alpha) ") " !important;
+}
+
+/* Adds vertical space between problem parts (a, b, c...) */
+.main-activity .problem ol > li {
+    margin-bottom: 2.5rem !important;
+}
+
+/* Ensures the Multiple Choice options themselves aren't too cramped */
+.main-activity .multiple-choice {
+    margin-bottom: 1rem !important;
+}
+
+/* Remove bullets from itemize lists inside a description environment */
+.main-activity .description ul {
+    list-style-type: none !important;
+    list-style: none !important;
+    padding-left: 1.5rem !important; /* This creates the indentation */
+    margin-top: 0 !important;
+}
+
+/* Ensure the individual items don't have bullets or extra markers */
+.main-activity .description ul li {
+    list-style-type: none !important;
+    display: block !important;
+}
+
+
+/* Remove bullets from itemize lists inside any Problem environment */
+.main-activity .problem ul {
+    list-style-type: none !important;
+    list-style: none !important;
+    padding-left: 1.5rem !important; /* Matches the indentation of your descriptions */
+}
+
+/* Ensure sub-items don't have markers */
+.main-activity .problem ul li {
+    list-style-type: none !important;
+}
+
+
+/* TOC CHANGES */
+
+/* Changing color of TOC */
+/* 1. THE PART BAR: Simple solid block */
+.activity-card.part {
+    background-color: #6082b6 !important;
+    color: white !important;
+    padding: 0.5rem 1.5rem !important; /* Shorter top/bottom padding, keeps wide side padding */
+}
+
+/* 2. THE SECTIONS: Glaucous and Orange on Click */
+.activity-card.section {
+    background-color: #9fb4d3 !important;
+}
+.activity-card.section.active,
+.activity-card.section:active {
+    background-color: #DD8A2E !important; 
+}
+
+/* 3. THE SUBSECTIONS: White and Orange on Click */
+.activity-card.activity {
+    background-color: #ffffff !important;
+    border: 2px solid #6082b6 !important;
+}
+.activity-card.activity.active,
+.activity-card.activity:active {
+    background-color: #DD8A2E !important; 
+}
+
+/* 4. THE SIDEBAR: Tiered Blue (No teal) */
+.sidebar, .nav-sidebar {
+    background-color: #cfd9e9 !important;
+}
+.nav-sidebar ul.nav, .nav-sidebar .nav-second-level {
+    background-color: #9fb4d3 !important;
+}
+.nav-sidebar li.active > a {
+    background-color: #DD8A2E !important;
+}
+
+
+/* Removes the automatic number (1, 2, 3) from Part tiles */
+.activity-card.part::before,
+.card-sectionheading.part::before,
+.part::before {
+    content: none !important;
+    display: none !important;
+}
+
+/* If the '1' is inside the tile text itself */
+.activity-card.part .part-counter,
+.activity-card.part [data-part-counter] {
+    display: none !important;
+}
+
+/* ******** TOC Changes (Font and Spacing)  ******************* */
+
+/* ==========================================================================
+   TARGET THE ACTIVE ACTIVITY-CARDS TO INCREASE TOC FONT SIZE
+   ========================================================================== */
+
+/* 1. Scale up the text size for all structural activity cards in the TOC */
+.activity-card,
+.activity-card * {
+    font-size: 17px !important; /* Forces the text inside the TOC cards up to 18px */
+}
+
+/* 2. Re-scale the part labels to match or sit slightly larger if desired */
+.activity-card.part,
+.activity-card.part * {
+    font-size: 22px !important; 
+}
+
+
+
+/* ==========================================================================
+   FORCE SPACE BETWEEN SUBSECTION NUMBERS AND TITLES
+   ========================================================================== */
+
+/* 1. Add horizontal padding inside the title anchor tags to separate numbers and text */
+.activity-card a {
+    padding-left: 12px !important; /* Creates a clean, protective gap between the 1.5.1 numbers and titles */
+    display: inline-block !important;
+}
+
+/* 2. Alternative fix if the template uses a hidden inline separator span */
+.activity-card span {
+    margin-right: 10px !important;
+}
+
+
+/* Keep main content layout flush against the newly narrowed TOC column */
+.main-activity, 
+main, 
+#main-content {
+    width: auto !important;
+    margin-left: 0 !important;        /* Prevents random white space gaps from creeping in */
+    padding-left: 10px !important;    /* Clean spacing padding between lesson layout and TOC */
+}
+
+
+
+
+/* ******** Done with changes ********************************  */
+
+/* ******** Save file, then use Ctrl F5 on webpage whenever you modify this file. **** */

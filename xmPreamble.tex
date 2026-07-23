@@ -1,0 +1,108 @@
+\typeout{Start loading xmPreamble.tex}%
+
+% Add here extra macro's that are loaded automatically by all documents of class 'ximera' or 'xourse' in this repo
+
+%%
+%%  Example:
+%%
+% \newcommand{\R}{\mathbb{R}
+
+\usetikzlibrary{patterns}
+%\usepackage{tikzlings}  Takes up too much codespace if I use the full version of LaTeX
+
+
+%Use this template to create a box for steps, axioms, etc.  
+%\begin{axiom}[Axiom of Choice]  
+        %  I’m not going to actually write the Axiom of Choice here -  
+         %  but only crazy people don’t assume it. Or maybe non-analysts.  
+%\end{axiom}  
+
+\usepackage{tcolorbox}  %Not needed for my ximera content.  Trying it out to create a better box around my rules in pdfs.
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem}  %To modify enumerate and itemize
+\usepackage{xcolor}
+
+% Next 2 lines create spaces between items in itemize and enumerate - Maybe??
+\setitemize{itemsep=2.5ex}
+\setenumerate{itemsep=2.5ex}
+
+% Creates vertical space between paragraphs - Maybe???
+\setlength{\parskip}{\medskipamount}
+
+% Needed for Hints on OSU Server
+\def\xmNotHintAsExpandable{1}
+    \def\xmNotExpandableAsAccordion{1}
+
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{arrows}
+
+%Defines a custom TikZ style called ->- that allows you to place an arrow at any specific position along a path. 
+%commonly used to add "middle" arrows to lines or curves to indicate direction.
+\tikzset{->-/.style={decoration={
+  markings,
+  mark=at position #1 with {\arrow{>}}},postaction={decorate}}}
+
+\definecolor{googleblue}{RGB}{66,133,244}
+\definecolor{googlered}{RGB}{234,67,53}
+\definecolor{googleyellow}{RGB}{244,180,0}
+\definecolor{googlegreen}{RGB}{52,168,83}
+\definecolor{darkgreen}{rgb}{0.0,0.5,0.2}  % Can also use green!85!black  The higher the number before black, the darker
+\definecolor{ximeraorange}{rgb}{0.933, 0.490, 0.086}
+
+% This line, creates a custom command called \rulecolor that is used to change the color of lines (rules) in a table.
+%\newcommand{\rulecolor}[1]{\def\CT@arc@{\color{#1}}}
+
+
+% Uses a scale from 0 to 1 for each color - the number is the intensity level of the color with 0
+% being no color and 1 full color: (1,1,1) makes white and (0,0,0) makes black
+\definecolor{darkblue}{rgb}{0.4,0.5,0.85}
+\definecolor{blue}{rgb}{0.1,0.3,.95}
+\definecolor{pink}{rgb}{0.6,0.4,0.7}
+\definecolor{green}{rgb}{0.4,0.6,0.5}
+\definecolor{yellow}{rgb}{0.1,0.6,0.8}
+\definecolor{red}{rgb}{0.8,0.1,0.5}
+\definecolor{glaucous}{rgb}{0.38,0.51,0.71}
+\definecolor{darkraspberry}{rgb}{0.53, 0.15, 0.34}
+\definecolor{funkyolive}{rgb}{0.33,0.42,0.18}
+\definecolor{royalblue}{rgb}{0.25, 0.41, 0.88}
+
+
+% For Answer Boxes in pdf - From Bart Spring 25  Causes error in one AddIntExercisesActivity
+%\newcommand{\answerFormatLength}{2cm}
+%\newcommand{\answerFormatDots}[1]{\ldots\ldots}
+%\newcommand{\answerFormatLine}[1]{\protect\rule{\answerFormatLength}{0.4pt}}
+%\newcommand{\answerFormatFlexibleLine}[1]{\protect\rule{\widthof{$#1$}*2}{0.4pt}}
+%\newcommand{\answerFormatFlexibleBox}[1]{\fbox{\scalebox{2}{\phantom{$#1$}}}}
+%\newcommand{\answerFormatPlain}[1]{\ensuremath{#1}}
+%\newcommand{\answerFormatBlue}[1]{\color{blue}\ensuremath{#1}}
+%\newcommand{\answerFormatBoxed}[1]{\fbox{\ensuremath{#1}}}
+%\newcommand{\answerFormatBoxedGiven}[1]{\underset{\scriptstyle\mathrm{given}}{\fbox{\ensuremath{#1}}}}
+
+% Glasses
+% Custom command for the Insight Section Icon
+\newcommand{\insightIcon}{%
+    \par\bigskip\noindent
+    \begin{tikzpicture}[scale=0.4]
+    % Frames (the outer "rims")
+    \draw[line width=2pt, fill=blue!5] (0,0) circle (0.9);
+    \draw[line width=2pt, fill=blue!5] (2.4,0) circle (0.9);
+
+    % The "Coke Bottle" Lens Effect (thin gray rings on the light background)
+    %\foreach \r in {0.7, 0.5, 0.3} {
+       % \draw[gray!40, thin] (0,0) circle (\r);
+       % \draw[gray!40, thin] (2.4,0) circle (\r);
+    %}
+
+    % Reflection glints (adds a "glass" feel)
+    \fill[white, opacity=0.8] (-0.4,0.4) circle (0.15);
+    \fill[white, opacity=0.8] (2.0,0.4) circle (0.15);
+
+    % Bridge
+    \draw[line width=2pt] (0.9,0.1) arc (150:30:0.35);
+
+    % Temples (Arms)
+    \draw[line width=2pt] (-0.9,0.3) -- (-1.8,0.7);
+    \draw[line width=2pt] (3.3,0.3) -- (4.2,0.7);
+\end{tikzpicture}
+\xmalt{}
+}

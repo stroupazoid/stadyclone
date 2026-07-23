@@ -1,0 +1,417 @@
+\documentclass{ximera}
+
+
+\title{Fractions:  Adding and Subtracting}   % Use xmlatex ghaction all -s to compile when SERVE refuses to work.
+\author{Kelly Stady}
+\license{CC: 0}
+
+\begin{document}
+
+
+\begin{abstract}
+
+\end{abstract}
+
+\maketitle
+\label{xim:FractionsAddSub}
+
+\section*{A Common Mistake}
+
+A student is asked to add $\textstyle \frac{1}{2}$ and $\textstyle \frac{1}{3}$ and writes the following.  Is their work correct?
+
+
+\[ \frac{1}{2} + \frac{1}{3} = \frac{2}{5} \]
+
+
+To answer this question, let's look at a visual representation of the student's logic.
+
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8, line width=0.8pt, font=\Large]
+
+% --- 1/2 rectangle ---
+\draw (0,0) rectangle (2,2);
+\draw (1,0) -- (1,2);
+\fill[glaucous,opacity=0.5] (0,0) rectangle (1,2);
+\node at (1,-0.8) {$\mathbf{\frac{1}{2}}$};
+
+% plus sign
+\node at (3,-0.8) {$+$};
+
+% --- 1/3 rectangle ---
+\draw (4,0) rectangle (6,2);
+\draw (4+2/3,0) -- (4+2/3,2);
+\draw (4+4/3,0) -- (4+4/3,2);
+\fill[orange!80!black,opacity=0.5] (4,0) rectangle (4+2/3,2);
+    \node at (5,-0.8) {$\mathbf{\frac{1}{3}}$};
+
+% not equal
+\node at (7,-0.8) {$\overset{\text{\scalebox{2.5}{?}}}{=}$};
+
+%\node at (7,-0.8) {$\neq$};
+
+% --- 2/5 rectangle ---
+\draw (8,0) rectangle (10,2);
+\foreach \x in {1,2,3,4} {
+  \draw (8+2*\x/5,0) -- (8+2*\x/5,2);
+}
+\fill[teal,opacity=0.5] (8,0) rectangle (8+4/5,2);
+\node at (9,-0.8) {$\mathbf{\frac{2}{5}}$};
+
+\end{tikzpicture}
+\xmalt{Three squares are shown. The first is divided into 2 equal vertical parts with 1 shaded, labeled one-half.  
+A plus sign appears. The second is divided into 3 equal vertical parts with 1 shaded, labeled one-third.  
+An equal sign with a question mark above it appears.  The third square is divided into 5 equal vertical parts with 
+2 shaded, labeled two-fifths.}
+\end{center}
+
+
+Since $\textstyle \frac{1}{3}$ is \emph{added} to $\textstyle \frac{1}{2},$ the result should be greater than $\textstyle \frac{1}{2}.$  
+However, you can see that the student's answer of $\textstyle \frac{2}{5}$ is actually less than $\textstyle \frac{1}{2}.$  
+This shows that simply adding the numerators and denominators doesn't work!  To get the correct answer, we need to divide each whole into the 
+same number of pieces. 
+
+
+\begin{center}
+\textbf{Fractions can only be added or subtracted when the pieces are the same size.}
+\end{center}
+
+Recall that the denominator of a fraction tells you how many equal-sized pieces a whole has been divided into.  If we decide to 
+divide each whole into six equal pieces, the original fractions can be rewritten as equivalent fractions with a denominator of 6 by
+multiplying by 1 in the appropriate form.  Below, the fraction $\frac{1}{2}$ has been multiplied by 1 in form $\frac{3}{3}$ and the 
+fraction $\frac{1}{3}$ has been multiplied by 1 in the form $\frac{2}{2}.$ 
+
+\begin{align*}
+  \frac{1}{2} &= \frac{1}{2} \cdot \frac{3}{3} & \qquad \frac{1}{3} &= \frac{1}{3} \cdot \frac{2}{2} \\[10pt]
+              &= \frac{3}{6}                   &  \qquad            &= \frac{2}{6}
+              \end{align*}
+
+Now we can visually represent the sum $\textstyle \frac{1}{2} + \frac{1}{3}$ as an equivalent sum with equal pieces:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8, line width=0.8pt, font=\Large]
+
+% --- 3/6 rectangle (1/2 equivalent) ---
+\draw (0,0) rectangle (2,2);
+\foreach \x in {1,2,3,4,5} {
+  \draw (0+2*\x/6,0) -- (0+2*\x/6,2);
+}
+\fill[glaucous,opacity=0.5] (0,0) rectangle (1,2);
+\node at (1,-0.8) {$\mathbf{\frac{3}{6}}$};
+
+% plus
+\node at (3,-0.8) {$+$};
+
+% --- 2/6 rectangle (1/3 equivalent) ---
+\draw (4,0) rectangle (6,2);
+\foreach \x in {1,2,3,4,5} {
+  \draw (4+2*\x/6,0) -- (4+2*\x/6,2);
+}
+\fill[orange!80!black,opacity=0.5] (4,0) rectangle ({4 + 2/3},2);
+\node at (5,-0.8) {$\mathbf{\frac{2}{6}}$};
+
+% equals
+\node at (7,-0.8) {$=$};
+
+% --- 5/6 result ---
+\draw (8,0) rectangle (10,2);
+\foreach \x in {1,2,3,4,5} {
+  \draw (8+2*\x/6,0) -- (8+2*\x/6,2);
+}
+\fill[teal, opacity=0.5] (8,0) rectangle ({8+5/3},2);
+\node at (9,-0.8) {$\mathbf{\frac{5}{6}}$};
+
+\end{tikzpicture}
+\xmalt{Three rectangles are shown, each divided into 6 equal vertical parts. The first has 3 parts shaded, labeled three-sixths.  
+A plus sign appears.  The second has 2 parts shaded, labeled two-sixths. An equals sign appears.  The third has 5 parts shaded, 
+labeled five-sixths, showing the correct sum.}
+\end{center}
+
+Combining 3 sixths and 2 sixths results in a total of 5 sixths.  The entire problem is written mathematically below:
+
+\begin{align*}
+\frac{1}{2} + \frac{1}{3} &= \frac{1}{2}\cdot \frac{3}{3} + \frac{1}{3} \cdot \frac{2}{2} \\[10pt]
+&= \frac{3}{6} + \frac{2}{6} \\[10pt]
+&= \frac{5}{6}
+\end{align*}
+
+\begin{remark}
+To learn mathematics, your solutions should be written using clear, logical steps as shown above;  this process will deepen your 
+understanding, prevent errors and serve as a test of your knowledge---if you cannot clearly communicate your work, you have not 
+yet fully grasped the concept.
+\end{remark}
+
+\begin{problem}
+Use the visual representation to find the difference.
+
+~ \\[1em]
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8, line width=0.8pt, font=\large]
+% --- 4/5 rectangle ---
+\draw (0,0) rectangle (2,2);
+\foreach \x in {1,2,3,4} { \draw (2*\x/5,0) -- (2*\x/5,2); }
+\fill[glaucous,opacity=0.5] (0,0) rectangle (1.6,2); % 4/5 of 2 units is 1.6
+\node at (1,-0.8) {$\displaystyle \mathbf{\frac{4}{5}}$};
+
+% minus sign (at label level)
+\node at (3,-0.8) {$-$};
+
+% --- 1/5 rectangle ---
+\draw (4,0) rectangle (6,2);
+\foreach \x in {1,2,3,4} { \draw (4+2*\x/5,0) -- (4+2*\x/5,2); }
+\fill[orange!80!black,opacity=0.5] (4,0) rectangle (4.4,2); % 1/5 of 2 units is 0.4
+\node at (5,-0.8) {$\displaystyle \mathbf{\frac{1}{5}}$};
+
+% equals sign (at label level)
+\node at (7,-0.8) {$=$};
+
+% --- Result rectangle (3/5) ---
+\draw (8,0) rectangle (10,2);
+\foreach \x in {1,2,3,4} { \draw (8+2*\x/5,0) -- (8+2*\x/5,2); }
+\fill[teal,opacity=0.5] (8,0) rectangle (9.2,2); % 3/5 of 2 units is 1.2
+
+% Giant question mark
+\node at (9,-0.8) {\textup{\scalebox{2}{?}}};
+
+\end{tikzpicture}
+\xmalt{A visual fraction subtraction problem shown using three identical rectangles divided vertically into five equal columns.  
+The first rectangle has four columns shaded and is labeled four-fifths.  This is followed by a minus sign.  The second rectangle 
+has one column shaded and is labeled one-fifth.  This is followed by an equal sign.  The third rectangle has three columns shaded 
+and is labeled with a large question mark.}
+\end{center}
+
+$\displaystyle \frac{4}{5} - \frac{1}{5} = \frac{\answer{3}}{\answer{5}}$
+
+\end{problem}
+
+
+\begin{procedure}[\textbf{Adding and Subtracting Fractions}]
+
+\begin{description}
+  \item[Step1: Find a Common Denominator] 
+  
+  Before adding or subtracting, the pieces must be the same size.  If the denominators are different, rewrite the fractions 
+  as equivalent fractions with a common denominator.
+
+  \item[Step 2: Add or Subtract the Numerators]  
+  
+  This tells you how many pieces you have.
+
+  \item[Steep 3: Keep the Denominator the Same] The size of the pieces doesn't change during addition or subtraction, so the denominator stays the same.
+
+  \item[Step 4: Simplify]  Check to see if the resulting fraction can be simplified.  If so, simplify.
+\end{description}
+
+\end{procedure}
+
+
+\section*{The Least Common Denominator}
+
+When adding or subtracting fractions with different denominators, we will use the \emph{smallest} or \emph{least common denominator}.  This will
+make the simplification at the end as easy as possible.
+
+\begin{definition}[\textbf{Multiples}]
+
+The \textbf{multiples of a number} are found by multiplying the number by the counting numbers: $\{1, 2, 3, 4, \ldots \}.$  
+For example, the first three multiples of 4 are: 4, 8 and 12.
+
+\end{definition}
+
+
+\begin{problem}
+List the first five multiples of $3.$ 
+
+\begin{multipleChoice}
+\choice{0, 3, 6, 9, 12}
+\choice[correct]{3, 6, 9, 12, 15}
+\choice{6, 9, 12, 15, 18}
+\choice{3, 9, 12, 15, 18}
+\end{multipleChoice} 
+\end{problem}
+
+
+\begin{definition}[\textbf{Least Common Denominator LCD}]
+
+The \textbf{least common denominator} is the smallest number that is a multiple of two or more denominators.  Equivalently, it is the smallest number that is
+evenly divisible by two or more denominators.
+
+\end{definition}
+
+\begin{procedure}[\textbf{Finding the Least Common Denominator}]
+
+Write the multiples of each denominator until you find the smallest one that appears in each list.  \textbf{Alternatively}, you can list
+the multiples of only the largest denominator and stop when you find the smallest one that is evenly divisible by the other denominators.
+\end{procedure}
+
+
+\begin{example}
+
+Find the LCD of $\frac{3}{4}$ and $\textstyle \frac{1}{7}.$ 
+
+
+\begin{explanation}
+
+List the multiples of 4 and 7 as shown below.   
+
+\begin{align*}
+\textbf{Multiples of 4}: \ & 4, 8, 12, 16, 20, 24, \mathbf{28}, 32, 36, \ldots \\
+\textbf{Multiples of 7}: \ & 7, 14, 21, \mathbf{28}, 35, 42, 49, 56, 63, \ldots
+\end{align*}
+
+Since 28 is the smallest number that appears in \textit{both} lists, the LCD = 28. 
+
+\begin{remark}
+Note that it is more efficient to list only the multiples of 7 and look for the smallest number in the list that is 
+evenly divisible by 4.  Had we done so, the list would've stopped at 28.  
+
+\end{remark}
+\end{explanation}
+
+\end{example}
+
+
+
+\begin{problem}
+Now that you know that the LCD of $\frac{3}{4}$ and $\textstyle \frac{1}{7}$ is 28, rewrite each fraction as an equivalent 
+fraction with a denominator of 28. Then add the fractions and simplify, if possible.
+
+\[ \frac{3}{4} = \frac{\answer{21}}{\answer{28}} \]
+
+\[ \frac{1}{7} = \frac{\answer{4}}{\answer{28}} \]
+
+
+\begin{hint}
+Mutliply each fraction by 1 in the appropriate form.  For example, to write $\frac{3}{4}$ as an equivalent fraction with a denominator
+of 28, multiply it by 1 in the form $\frac{7}{7}.$
+\end{hint}
+
+
+$\displaystyle \frac{3}{4} + \frac{1}{7} = \frac{\answer{25}}{\answer{28}} $ 
+\end{problem}
+
+
+
+\begin{problem}
+Follow the steps below to find the sum $\frac{1}{4} + \frac{2}{3}.$
+
+\begin{enumerate}
+\item Find the LCD of the fractions.
+
+\[ \textrm{LCD} = \answer{12} \] 
+
+    \begin{hint}
+      To find the LCD, list the multiples of 4 and look for the smallest one that is evenly divisible by 3. 
+    \end{hint}
+
+\item Rewrite each fraction as an equivalent fraction with the least common denominator.
+
+\[ \frac{1}{4} = \frac{\answer{3}}{\answer{12}} \]
+
+\[ \frac{2}{3} = \frac{\answer{8}}{\answer{12}} \]
+
+
+\item Add the fractions.  Simplify your answer, if possible. 
+
+\[ \frac{1}{4} + \frac{2}{3} = \frac{\answer{11}}{\answer{12}} \] 
+
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+Follow the steps below to find the difference $\frac{7}{10} - \frac{1}{6}.$ 
+
+
+\begin{enumerate}
+\item Find the LCD of the fractions.
+
+\[ \textrm{LCD} = \answer{30} \] 
+
+\item Rewrite each fraction as an equivalent fraction with the least common denominator.
+
+\[ \frac{7}{10} = \frac{\answer{21}}{\answer{30}} \]
+
+\[ \frac{1}{6} = \frac{\answer{5}}{\answer{30}} \]
+
+
+\item Subtract the fractions.  Simplify your answer, if possible. 
+
+\[ \frac{7}{10} - \frac{1}{6} = \frac{\answer{8}}{\answer{15}} \] 
+
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+A community land trust is dividing a large lot to combat food insecurity. They decide to use $\textstyle \frac{2}{3}$ of 
+the lot for growing fresh vegetables to donate to local food pantries and $\textstyle \frac{1}{5}$ of the lot for a fruit 
+orchard.  Follow the steps below to find the fraction of the land that is dedicated to food production.
+
+\begin{enumerate}
+\item Find the LCD of the fractions.
+
+\[ \textrm{LCD} = \answer{15} \] 
+
+\begin{hint}
+      To find the LCD, list the multiples of 5 and look for the smallest one that is evenly divisible by 3. 
+    \end{hint}
+
+
+  \item Rewrite each fraction as an equivalent fraction with the least common denominator.
+
+    \begin{align*}
+        \text{Vegetable Garden: } \frac{2}{3} &= \frac{\answer{10}}{\answer{15}} \\
+                                                & \\
+        \text{Fruit Orchard: } \frac{1}{5} &= \frac{\answer{3}}{\answer{15}}
+    \end{align*}
+
+  \item Add the fractions.  Simplify your answer, if possible. 
+    
+  \[ \textrm{Fraction of Land Used for Food} \ = \frac{\answer{13}}{\answer{15}} \]
+
+    \end{enumerate}
+\end{problem}
+
+
+
+\begin{problem}
+Factory farms store animal waste in massive open-air pits called lagoons.  In one community, a lagoon is $\textstyle \frac{5}{6}$ 
+full of untreated waste.  To lower the level and prevent an overflow into the local groundwater, the farm operators spray an amount 
+equal to $\textstyle \frac{1}{4}$ of the lagoon's total capacity into the air and onto nearby fields.  Follow the steps below
+to determine the fraction of the lagoon's total capacity that remains full.
+
+\begin{enumerate}
+\item Find the LCD of the fractions.
+
+\[ \textrm{LCD} = \answer{12} \] 
+
+\begin{hint}
+To find the LCD, write the multiples of 6 and look for the smallest number that is evenly divisible by 4.  Or write the multiples of 
+both numbers and look for the smallest number that appears in both lists.
+\end{hint}
+
+\item Rewrite each fraction as an equivalent fraction with the least common denominator.
+
+\begin{align*}
+\text{Initial Waste Level: } \frac{5}{6} &= \frac{\answer{10}}{\answer{12}} \\
+& \\
+\text{Waste Removed: } \frac{1}{4} &= \frac{\answer{3}}{\answer{12}}
+\end{align*}
+
+\item Subtract the fractions.  Simplify your answer, if possible. 
+
+\[ \textrm{Remaining Waste Level}  = \frac{\answer{7}}{\answer{12}} \]
+
+\begin{feedback}
+While spraying the waste on fields prevents the lagoon from overflowing, it creates a new problem for the community.  The waste is 
+often sprayed as a fine mist that can travel for miles, carrying harmful bacteria, nitrates and intense odors into nearby neighborhoods.
+For the people living nearby, this isn't just an unpleasant smell---it is a serious health hazard! Studies have shown that families 
+living near these spray fields experience higher rates of asthma, respiratory infections and even contaminated well water. 
+\end{feedback}
+
+\end{enumerate}
+
+\end{problem}
+
+\end{document} 

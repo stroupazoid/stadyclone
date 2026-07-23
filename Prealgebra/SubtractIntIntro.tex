@@ -1,0 +1,196 @@
+\documentclass{ximera}[font=12pt]
+
+\title{Subtracting Integers:  Introduction}   % Use xmlatex all -s to compile when SERVE refuses to work.
+\author{Kelly Stady}
+\license{CC: 0}         % replace with an appropriate license, or set it in xmPreamble
+
+\begin{document}
+
+\begin{abstract}
+
+\end{abstract}
+
+\maketitle
+\label{xim:SubtractInt}
+
+
+\section*{Introduction}
+
+\textbf{Elevation} is the height of a point on earth \textbf{above} ($+$) or \textbf{below} ($-$) sea level.  In geology, the \textbf{elevation span or topographic relief} of a region is the difference between its highest and lowest elevations. Regions with large spans are typically rugged, with high mountain ranges and deep valleys, whereas regions with small spans are generally flatter and more uniform.
+\[ \textbf{Elevation Span} = \textrm{Highest Elevation} - \textrm{Lowest Elevation} \]
+
+By calculating the difference between the highest and lowest elevations, geologists can determine if a region is being built up by internal forces (large span) or worn away by the elements (small span).
+
+When both points of interest are above sea level, finding the span is easy.  In Ohio, for example, the highest point (Campbell Hill) is 1550 
+feet \textbf{above} sea level, and the lowest point (Ohio River) is 455 feet \textbf{above} sea level, so the elevation span of Ohio is
+\[ 1550 - 455 = 1095 \ \textrm{feet}. \]
+
+When one elevation is below sea level, finding the span isn't as straightforward.  For instance, in the United States, the highest peak is 
+20,310 feet \textbf{above} sea level in Denali, Alaska and the lowest basin is 282 feet \textbf{below} sea level in Death Valley, California.  
+So, the elevation span of the U.S. is given by the difference
+\[ 20,310 - (-282). \]
+
+However, from the diagram below, you can see that the span of the U.S. can be found by \emph{adding}.
+\[ 20,310 + 282 = 20,592 \ \textrm{feet} \]
+
+
+\begin{center}
+\begin{tikzpicture}[scale=0.5, >=stealth]   %USA Elevation Span
+    % Draw Vertical Axis
+    \draw[ultra thick, <->] (0,-4) -- (0,10) node[above, yshift=5pt] {\Large\textbf{Elevation (ft)}};
+
+    % Sea Level Line
+    \draw[blue!60!black, ultra thick] (-1,0) -- (1.5,0) node[right, xshift=5pt] {\Large\textbf{Sea Level (0)}};
+
+    % Denali Point (+20,310)
+    \filldraw[black] (0,8) circle (5pt) node[right, xshift=8pt] {\Large Denali (+20,310)};
+
+    % Death Valley Point (-282)
+    \filldraw[black] (0,-2) circle (5pt) node[right, xshift=8pt] {\Large Death Valley (-282)};
+
+    % Braces - Using 'very thick' for the curly lines
+    \draw [decorate, decoration={brace, amplitude=9pt, raise=5pt}, very thick] (0,-2) -- (0,0)
+        node [midway, left=25pt] {\Large\textbf{282 ft}};
+
+    \draw [decorate, decoration={brace, amplitude=15pt, raise=5pt}, very thick] (0,0) -- (0,8)
+        node [midway, left=25pt] {\Large\textbf{20,310 ft}};
+
+    % Total Span Arrow - Two lines, Bold, No Italics
+    \draw[<->, orange!80!black, line width=2pt] (-8,-2) -- (-8,8)
+        node [midway, left=15pt, align=center] {
+            \Large\textbf{Elevation}\\
+            \Large\textbf{Span}
+        };
+    % Guides
+    \draw[dashed, gray, thick] (-8,8) -- (0,8);
+    \draw[dashed, gray, thick] (-8,-2) -- (0,-2);
+\end{tikzpicture}
+\xmalt{Vertical number line showing the elevation span for the United States.  Points are plotted at 20,310 for Denali 
+and negative 282 for Death Valley, with sea level marked at zero.  Braces indicate a distance of 20,310 units above 
+zero and 282 units below zero.  The total elevation span is shown to the left as the combined vertical distance from 
+negative 282 to 20,310.}
+\end{center}
+
+%\emph{Source:} Elevation data provided by the U.S. Geological Survey (USGS), Highest and Lowest Elevations table. Available at %\href{https://www.usgs.gov/educational-resources/highest-and-lowest-elevations}{\textcolor{darkraspberry}{\textbf{usgs.gov}}}.
+
+
+\normalsize
+Although it seems paradoxical, this illustrates a key concept: \textbf{subtracting a number is the same as adding its opposite}.
+
+\[ 20,310 - (-282) =  20,310 + 282 \]
+
+
+
+\begin{problem}
+China has the largest elevation span in the world.  Its highest elevation is 29,032 feet \textbf{above} sea level 
+on Mount Everest and its lowest elevation is 505 feet \textbf{below} sea level at Ayding Lake.  Write the subtraction 
+problem to find China's elevation span.
+
+\begin{multipleChoice}
+\choice{$29,032 - 505 $}
+\choice{$-29,032 - (-505)$}
+\choice[correct]{$29,032 - (-505)$}
+\choice{$-29,032 - 505$}
+\end{multipleChoice}
+
+Use the diagram below to write the subtraction problem as an equivalent addition problem.  Then find China's elevation
+span. 
+
+\begin{center}
+\begin{tikzpicture}[scale=0.5, >=stealth]  %China Elevation Span
+    % Draw Vertical Axis
+    \draw[ultra thick, <->] (0,-4) -- (0,10) node[above, yshift=5pt] {\textnormal{\Large\textbf{Elevation (ft)}}};
+
+    % Sea Level Line
+    \draw[blue!60!black, ultra thick] (-1,0) -- (1.5,0) node[right, xshift=5pt] {\textnormal{\Large\textbf{Sea Level (0)}}};
+
+    % Mount Everest Point
+    \filldraw[black] (0,8) circle (5pt) node[right, xshift=8pt] {\textnormal{\Large Mt. Everest ($+29,032$)}};
+
+    % Ayding Lake Point
+    \filldraw[black] (0,-2) circle (5pt) node[right, xshift=8pt] {\textnormal{\Large Ayding Lake ($-505$)}};
+
+    % Braces
+    \draw [decorate, decoration={brace, amplitude=9pt, raise=5pt}, very thick] (0,-2) -- (0,0)
+        node [midway, left=25pt] {\textnormal{\Large\textbf{505 ft}}};
+
+    \draw [decorate, decoration={brace, amplitude=15pt, raise=5pt}, very thick] (0,0) -- (0,8)
+        node [midway, left=25pt] {\textnormal{\Large\textbf{29,032 ft}}};
+
+    % Total Span Arrow - Stacked on two lines with fixed line break
+    \draw[<->, orange!80!black, line width=2pt] (-8,-2) -- (-8,8)
+        node [midway, left=15pt, align=center] {
+            \Large \textbf{Elevation} \\
+            \Large \textbf{Span}};
+
+    % Guides
+    \draw[dashed, gray, thick] (-8,8) -- (0,8);
+    \draw[dashed, gray, thick] (-8,-2) -- (0,-2);
+\end{tikzpicture}
+\xmalt{Vertical number line showing the elevation span for China.  Points are plotted at 29,032 (Mount Everest) and 
+negative 505 (Ayding Lake).  Braces indicate a distance of 29,032 units above zero and 505 units below zero.  The 
+total elevation span is shown as the combined vertical distance from  negativve 505 to 29,032.}
+\end{center}
+
+\begin{multipleChoice}
+\choice{$-29,032 + (-505)$}
+\choice{$ 29,032 + (-505)$}
+\choice{$-29,032 + 505$}
+\choice[correct]{$29,032 + 505$}
+\end{multipleChoice}
+
+
+\textbf{Do not include commas in your answer}.
+
+\textcolor{orange!80!black}{\textbf{China's Elevation Span}} =  $\answer{29537}$ \ feet
+
+\end{problem}
+
+
+\section*{Extra Insight: The Drowning of the Maldives}
+
+\normalsize
+An \textbf{archipelagic nation} is a country made up of a group of islands and the surrounding water.  The Maldives 
+is an archipelagic nation of over 1,000 islands located in the Indian Ocean.  It is the lowest-lying country on Earth, 
+with an average ground level elevation of less than 5 feet above sea level.  It also has the world's smallest elevation 
+span: just 16.7 feet above sea level.  The islands are very flat!
+
+\textbf{Highest Elevation}: \  16.7 feet \textbf{above} sea level (Villingili Island)
+
+\textbf{Lowest Elevation}: \  0 feet, \textbf{at} sea level (Indian Ocean)
+
+
+Scientists predict that most of the Maldives will be uninhabitable or completely submerged by the year 2100 if sea 
+levels continue to rise at current rates.
+
+
+\begin{center} 
+\begin{tikzpicture}[scale=0.35, >=stealth] % Keeping the accurate mathematical scale
+
+% Draw Vertical Axis 
+\draw[ultra thick, <->] (0,-2) -- (0,18) node[above, yshift=5pt] {\Large\textbf{Elevation (ft)}}; 
+
+% Current Sea Level Line 
+\draw[blue!60!black, ultra thick] (-1,0) -- (1.5,0) node[right, xshift=5pt] {\Large\textbf{Sea Level (0)}}; 
+
+% Villingili Island Point (+16.7)
+\filldraw[black] (0,16.7) circle (5pt) node[right, xshift=8pt] {\Large Villingili Island (+16.7)}; 
+
+% Braces 
+\draw [decorate, decoration={brace, amplitude=10pt, raise=5pt}, very thick] (0,0) -- (0,16.7) node [midway, left=20pt] {\Large\textbf{16.7 ft}}; 
+
+% Total Span Arrow (SHIFTED LEFT: Changed from -6 to -9)
+\draw[<->, orange!80!black, line width=2pt] (-9,0) -- (-9,16.7) node [midway, left=15pt, align=center] {\Large\textbf{Elevation}\\\Large\textbf{Span}}; 
+
+% Guides (SHIFTED LEFT: Changed starting point from -6 to -9)
+\draw[dashed, gray, thick] (-9,16.7) -- (0,16.7); 
+\draw[dashed, gray, thick] (-9,0) -- (0,0); 
+
+\end{tikzpicture} 
+\xmalt{Vertical number line showing the elevation span for the Maldives.  A point is plotted at 16.7 for Villingili Island, 
+and sea level is marked at zero.  A brace indicates a distance of 16.7 feet above zero.  The total elevation span is shown 
+to the left as the vertical distance from zero to 16.7.}
+\end{center}
+
+
+\end{document}

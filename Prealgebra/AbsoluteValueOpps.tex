@@ -1,0 +1,466 @@
+\documentclass{ximera}[font=12pt]
+
+
+\title{Absolute Value and Opposites}   % Use xmlatex all -s or xmlatex ghaction to compile when SERVE refuses to work.
+\author{Kelly Stady}
+\license{CC: 0}         % replace with an appropriate license, or set it in xmPreamble
+
+\begin{document}   
+
+\begin{abstract}
+    
+\end{abstract}
+
+
+\maketitle
+
+\label{xim:AbsValue}
+
+
+\section*{Absolute Value}
+
+If you're cutting a piece of wood to be 10 inches long, being $0.5$ inches too long is just as problematic as being $0.5$ inches too short. In 
+both cases, the \textbf{size} of the error is $0.5$ and this is what matters.  The concept of \textbf{absolute value} can be used to represent the \textbf{magnitude} of a mistake, regardless 
+of whether it was an overshot or undershot.
+
+The \textbf{absolute value of a number} is its \textbf{distance from zero} on a number line.  Since distance is always positive or 0, so is 
+absolute value.  Absolute value is represented by two vertical bars and can be interpreted as the \textbf{size}, \textbf{strength} or 
+\textbf{magnitude} of a number.
+
+The number line below shows the absolute values of $-4$ and $4.$  Since their absolute values are the same, the numbers $-4$ and $4$ have the same strength or magnitude.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2, font=\sffamily]
+% Draw Number Line
+\draw[<->, thick] (-5.5,0) -- (5.5,0);
+\foreach \x in {-5,-4,...,5}
+    \draw (\x, 0.1) -- (\x, -0.1) node[below] {\small \x};
+
+% Highlighting the points -4, 0, and 4
+\filldraw[orange!85!black] (-4,0) circle (2pt);
+\filldraw[glaucous] (4,0) circle (2pt);
+\filldraw[black] (0,0) circle (2pt);
+
+% Horizontal line for -4 (Red) - Original position
+\draw[orange!85!black, ultra thick, |-|] (-4, 0.6) -- (0, 0.6)
+    node[midway, above, font=\bfseries] {Distance = 4};
+
+% Horizontal line for +4 (Blue) - Original position
+\draw[glaucous, ultra thick, |-|] (0, 1.3) -- (4, 1.3)
+    node[midway, above, font=\bfseries] {Distance = 4};
+
+% NEW: Absolute values centered UNDER the number line
+\node[orange!85!black, font=\bfseries] at (-2, -0.8) {$\mathbf{|-4| = 4}$};
+\node[glaucous, font=\bfseries] at (2, -0.8) {$\mathbf{|4| = 4}$};
+
+% Vertical guide lines - Original position
+%\draw[dashed, gray] (0,0) -- (0, 1.5);
+%\draw[dashed, gray] (-4,0) -- (-4, 0.6);
+%\draw[dashed, gray] (4,0) -- (4, 1.3);
+\end{tikzpicture}
+\xmalt{A horizontal number line from negative 5 to 5 with solid dots plotted at negative 4, 0, and 4.  Above the line, an 
+orange bar spans from negative 4 to 0 and a blue bar spans from 0 to 4, both labeled ``Distance = 4''.  
+Below the line, it states that the absolute value of negative 4 is 4 and the absolute value of 4 is 4.}
+
+\end{center}
+
+\textbf{To find the absolute value of a number}, think of the number line as a path and each integer as a step. The 
+absolute value of a number is how many steps you would have to take to travel from the number to zero.  For example, 
+you would have to take $2$ steps to travel from $-2$ to $0,$ so the absolute value of $-2$ is $2.$
+\[ |-2| = 2 \]
+
+
+\begin{problem}
+Find the absolute value of each number.
+
+\[ |-1| = \begin{prompt} \answer{1} \end{prompt} \]
+
+\[ |7| = \begin{prompt} \answer{7} \end{prompt} \]
+
+
+\[ |-55| = \begin{prompt} \answer{55} \end{prompt} \]
+
+\end{problem}
+
+
+\begin{problem}
+You are building a custom bookshelf and need to cut boards that are $36$ inches long.  A board will be usable if its 
+length is off by no more than $0.25$ inch of the target.  Suppose you cut the first board $35.8$ inches long.  The 
+difference between the actual board length and the target length is the error.
+\begin{eqnarray*}
+  \textbf{Error} &=& 35.8 - 36 \\
+        & & \\
+        &=& -0.2 \  \textrm{inches}
+\end{eqnarray*}
+
+The negative sign indicates that you cut the board too short.  However, it only matters if the board is useable or not, so we 
+take the \textbf{absolute value} to find the \textbf{distance} from the target length.  This distance is called the \textbf{absolute error}.
+
+\begin{eqnarray*}
+\textbf{Absolute Error} &=& |35.8 - 36| \\
+    & & \\
+    &=& |-0.2| \\
+    & & \\
+    &=&  \answer{0.2} \ \textrm{inches}
+\end{eqnarray*}
+
+Is this board usable? \textbf{Hint}: A board is usable if the absolute error is less than or equal to $0.25$ inches.
+
+\begin{multipleChoice}
+    \choice[correct]{Yes, the absolute error is less than $0.25$ inches.}
+    \choice{No, the absolute error is greater than $0.25$ inches.}
+\end{multipleChoice}
+
+\end{problem}
+
+\section*{Extra Insight:  The Relationship Between Speed and Velocity}
+
+In physics, the motion of an object is often described by its \textbf{velocity}, which indicates its speed \emph{and} direction.  
+When an object moves \textbf{upward} or to the \textbf{right}, its velocity is \textbf{positive} and when it moves 
+\textbf{downward} or to the \textbf{left}, its velocity is \textbf{negative}.  We use
+absolute value to turn velocity into speed.
+
+\begin{center}
+Speed = |Velocity|  \\
+
+\textbf{\textcolor{glaucous}{Speed is the magnitude or size of velocity}}. 
+\end{center}
+
+When a ball is thrown straight up in the air, its velocity is positive as it moves upward, zero when it reaches its highest point and negative when
+it falls back to Earth.  If, after 6 seconds, the velocity of the ball is $-15$ feet per second, we know that it is falling back to Earth,
+since its velocity is negative.  Since $|-15| = 15$ the ball is traveling at a speed of $15$ feet per second 6 seconds after it was thrown upward.
+
+\begin{center}
+\begin{tikzpicture}[>=stealth, scale=1.2]
+
+    % Ground line
+    \draw[ultra thick] (-1.5, 0) -- (4.5, 0);
+    \fill[pattern=north east lines] (-1.5, -0.2) rectangle (4.5, 0);
+
+    % The Ball (Added at the start of the blue line)
+    %\shade[ball color=magenta] (0.8, 0.5) circle (0.15);  Alternative for the ball
+    \shade[ball color=white, draw=black, thin] (0.8, 0.5) circle (0.15);
+
+    % Upward Path (Positive Velocity)
+    \draw[->, glaucous!70!black, line width=3pt] (0.8, 0.7) -- (0.8, 3.5);
+    \node[left, glaucous!70!black, font=\bfseries] at (0.8, 2) {\textbf{Velocity (+)}};
+
+    % The Peak (Zero Velocity)
+    \draw[dashed, thick] (-1, 3.5) -- (4, 3.5);
+    \node[right] at (4, 3.5) {\textbf{Velocity = 0}};
+
+    % Downward Path (Negative Velocity)
+    \draw[->, orange!80!black, line width=3pt] (2.2, 3.5) -- (2.2, 0);
+    \node[right, orange!80!black, font=\bfseries] at (2.2, 2) {Velocity  (--)};
+
+\end{tikzpicture}
+\xmalt{A physics diagram illustrating vertical projectile motion relative to a ground line.  A ball is above the 
+ground on the left.  A thick blue upward arrow represents the ball's ascending path and is labeled ``Velocity'' with a plus
+sign next to it.  A dashed horizontal line marks the peak of the flight, labeled ``Velocity = 0''.  A thick orange downward arrow on 
+the right represents the descending path and is labeled ``Velocity'' with a minus sign next to it.}
+\end{center}
+
+
+\begin{problem}
+A model rocket was launched straight up in the air.  After $8$ seconds, the velocity of the rocket was recorded as $-12$ feet per second.
+In which direction was the rocket moving $8$ seconds after it was launched?
+
+\begin{multipleChoice}
+\choice[correct]{Downward}
+\choice{Upward}
+\end{multipleChoice}
+
+What was the rocket's speed at that moment?
+
+Speed = $\answer{12}$ feet per second
+
+\end{problem}
+
+\section*{Opposites}
+
+\begin{definition}[\textbf{Opposites}]
+
+Two numbers that are the same distance from zero but on opposite sides
+of zero are called \textbf{opposites}.
+
+The opposite of a number is found by changing its sign.
+
+The phrase ``\textbf{the opposite of}'' is written mathematically as a dash ($-$).
+
+\end{definition}
+
+\begin{example}
+
+State two numbers that are opposites and explain why they are opposites.
+
+\begin{explanation}
+
+The numbers $3$ and $-3$ are opposites.  They lie the same distance from zero on the number line, but 
+in \textbf{opposite} directions, and they have the same absolute values.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2, font=\sffamily]
+% Draw Number Line
+\draw[<->, thick] (-4.5,0) -- (4.5,0);
+\foreach \x in {-4,...,4}
+    \draw (\x, 0.1) -- (\x, -0.1) node[below] {\small \x};
+
+% Highlighting the points -3, 0, and 3
+\filldraw[orange!85!black] (-3,0) circle (2pt);
+\filldraw[glaucous] (3,0) circle (2pt);
+\filldraw[black] (0,0) circle (2pt);
+
+% Horizontal line for -3 (Orange)
+\draw[orange!85!black, ultra thick, |-|] (-3, 0.6) -- (0, 0.6)  % |-| is a line with two vertical bars at its end
+    node[midway, above, font=\bfseries] {Distance = 3};
+
+% Horizontal line for 3 (Blue)
+\draw[glaucous, ultra thick, |-|] (0, 1.3) -- (3, 1.3)
+    node[midway, above, font=\bfseries] {Distance = 3};
+
+% Absolute values- centered
+\node[orange!85!black, font=\bfseries] at (-1.5, -0.8) {$\mathbf{|-3| = 3}$};
+\node[glaucous, font=\bfseries] at (1.5, -0.8) {$\mathbf{|3| = 3}$};
+
+\end{tikzpicture}
+\xmalt{A horizontal number line from negative 4 to 4 with solid dots plotted at negative 3, 0, and 3.  
+Above the line, an orange bar spans from  negative 3 to 0 and a blue bar spans from 0 to 3, both labeled 
+``Distance = 3''.  Below the line, it states that the absolute value of negative 3 is 3 and the absolute value of 3 is 3.}
+
+\end{center}
+
+\end{explanation}
+\end{example}
+
+
+\subsection*{Properties of Opposites}
+
+\begin{enumerate}
+\item Opposites have the same absolute value because they are equidistant from zero.
+
+\item One is positive and the other is negative.
+
+\item Adding a number and its opposite always results in zero: $a +(-a) = 0.$
+
+\item Zero is unique because it is its own opposite: $0= -0.$
+
+\end{enumerate}
+
+
+\begin{problem}
+Complete the table.
+
+\[
+\renewcommand{\arraystretch}{1.8}
+\begin{array}{c @{\hspace{30pt}} c @{\hspace{30pt}} c}
+\text{Number} & \text{Opposite} & \text{Absolute Value} \\
+\hline
+-15 & \answer{15} & \answer{15} \\
+8 & \answer{-8} & \answer{8} \\
+0 & \answer{0} & \answer{0} \\
+-2.5 & \answer{2.5} & \answer{2.5} \\
+\end{array}
+\]
+
+\end{problem}
+
+\begin{definition}[\textbf{The Three Meanings of a Dash $-$}]
+
+In mathematics, the \textbf{dash} is used in three different ways depending on its role.
+
+\begin{enumerate}
+    \item \textbf{Negative}: \ When a dash is attached directly to a number, it describes its location on the number line and
+    is \textbf{read} as \textbf{negative}. \\
+
+    \item \textbf{Opposite}: \ A dash placed before parentheses, absolute value or a variable represents an action: changing the sign or multiplying by 
+    $-1$ and is \textbf{read} as \textbf{the opposite of}. \\
+
+    \item \textbf{Subtraction}: \ A dash placed between two numbers represents the operation of subtraction and is \textbf{read} as \textbf{minus}.
+\end{enumerate}
+
+\end{definition}
+
+
+\begin{remark}
+The expression $-x$ is sometimes read as negative $x,$ rather than the opposite of $x.$  However, keep in mind that the expression
+can be positive, negative or even 0, depending on the value of $x.$  
+\end{remark}
+
+
+\begin{problem}
+Identify the correct way to read each expression.
+
+~ \\[1em]
+
+\begin{enumerate}
+\item $18 - 5$ is read as \wordChoice{\choice{Negative 5} \choice[correct]{Eighteen minus five} \choice{The opposite of 5}}.
+\item $-20$ is read as \wordChoice{\choice[correct]{Negative 20} \choice{The opposite of negative 20} \choice{Minus 20}}. \\ 
+\item $-|-7|$ is read as \wordChoice{\choice[correct]{The opposite of the absolute value of negative 7} \choice{The opposite of the absolute value of 7}. \choice{The absolute value
+of negative 7}}. \\ 
+\item $-k$ is read as \wordChoice{\choice{Dash k} \choice{Minus k} \choice[correct]{The opposite of k}} \\ 
+\end{enumerate}
+
+\end{problem}
+
+
+\begin{definition}[\textbf{The Double Negative Property}]
+
+For any number $a,$
+
+\[ -(-a) = a \]
+
+The expression $-(-a)$ is read as ``the opposite of negative $a$."
+
+\end{definition}
+
+
+\begin{problem}
+Use the Double Negative Property to simplify the following expressions.
+
+\[ -(-14) = \answer{14} \] 
+
+\[ -(-100) = \answer{100}\] 
+
+\[ -(-0) = \answer{0} \]
+
+\end{problem}
+
+
+\begin{problem}
+How is the expression $-(-22)$ read?
+
+\begin{multipleChoice}
+\choice{Negative negative 22}
+\choice{Minus negative 22}
+\choice[correct]{The opposite of negative 22}
+\choice{The opposite of 22}
+\end{multipleChoice}
+
+\end{problem}
+
+
+\begin{problem}
+If $x = -10$, what is the value of $-(-x)$?
+
+\begin{multipleChoice}
+    \choice{$10$}
+    \choice[correct]{$-10$}
+    \choice{$0$}
+\end{multipleChoice}
+
+\begin{feedback}
+Remember: $-(-x) = x,$ therefore since $x$ started as $-10$, the final result is also $-10$.
+\end{feedback}
+\end{problem}
+
+
+\begin{warning}
+
+A common mistake is to treat absolute value like parentheses. Keep in mind that \textbf{parentheses} are 
+used for \textbf{grouping}, whereas \textbf{absolute value} is an \textbf{operation}.  Make certain you 
+understand the difference between the following cases.  
+
+\begin{description}[style=nextline, leftmargin=0pt]  %leftmargin removes the indentation below items
+    \item[Double Negative with Parentheses]
+
+Since we have parentheses, we simply find the opposite of negative $7,$ which is $7.$
+\[ -(-7) = 7 \]
+
+\item[Double Negative with Absolute Value]
+
+To find the opposite of the absolute value of negative $7,$ start with the absolute value: $|-7| = 7,$ 
+then find the opposite of that result.  The opposite of $7$ is $-7$ therefore,
+
+\[ -|-7| = -7. \]
+
+\end{description}
+
+\end{warning}
+
+\subsection*{Absolute Value vs. Opposite}
+
+While absolute value always results in a nonnegative (zero or positive) number, taking the opposite of a number 
+changes its sign.  Therefore, an opposite can be positive, negative or $0.$  Note that for the number $0,$ both 
+its absolute value and its opposite are $0.$  Later, you will see how these two concepts are used together to add integers.
+
+Below, the concept of an opposite has been used to write a rule for finding absolute value.  Notice that this rule 
+doesn't rely on distance.
+
+\begin{procedure}[\textbf{Finding the Absolute Value of a Number}]
+\begin{description}[style=nextline, leftmargin=0pt, font=\bfseries]
+    \item[Positive Numbers and $0$:]
+    The absolute value of a positive number or $0$ is the number itself.
+    \item[Negative Numbers:]
+    The absolute value of a negative number is the \textbf{opposite} of that number.
+\end{description}
+\end{procedure}
+
+\begin{problem}
+\textcolor{orange!80!black}{\textbf{True or False}} \ If a number is negative, its opposite must be positive.
+
+\begin{multipleChoice}
+\choice[correct]{True}
+\choice{False}
+\end{multipleChoice}
+
+\begin{feedback}[correct]
+Exactly! The opposite flips the sign, so a negative becomes positive.
+\end{feedback}
+
+\end{problem}
+
+\begin{problem}
+\textcolor{orange!80!black}{\textbf{True or False}} \ Two different numbers can have the same absolute value.
+
+\begin{multipleChoice}
+\choice[correct]{True}
+\choice{False}
+\end{multipleChoice}
+
+\begin{feedback}[correct]
+Yep! The numbers $2$ and $-2$ have the same absolute values.  In fact, all opposites have the same absolute values.
+\end{feedback}
+
+\end{problem}
+
+\begin{problem}
+Which has a greater value: the opposite of $-10$ or the absolute value of $-10?$  
+
+\begin{multipleChoice}
+\choice[correct]{Neither, they are the same.}
+\choice{The opposite of $-10.$}
+\choice{The absolute value of $-10.$}
+\end{multipleChoice}
+
+\begin{feedback}
+The opposite of $-10$ is $10$ and $|-10| = 10,$ so they are the same.
+\end{feedback}
+
+\end{problem}
+
+
+\begin{problem}
+Two numbers, $a$ and $b$ are opposites. If the distance between
+$a$ and $b$ on a number line is $10$ units, what are the two numbers?
+
+\begin{multipleChoice}
+\choice{$-10$ and $10$}
+\choice[correct]{$-5$ and $5$}
+\choice{$-6$ and $4$}
+\choice{$-7$ and $3$}
+\end{multipleChoice}
+
+\begin{hint}
+Draw a number line and with $a$ and $b$ ten units apart.
+\end{hint}
+
+\begin{feedback}[correct]
+Good job!  You made it through this problem and this section.
+\end{feedback}
+
+\end{problem}
+
+
+
+\end{document}
+

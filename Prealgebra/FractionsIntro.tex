@@ -1,0 +1,692 @@
+\documentclass[handout, font=12pt]{ximera}
+
+\title{Fractions: Introduction}   % Use xmlatex all -s to compile when SERVE refuses to work.
+\author{Kelly Stady}
+\license{CC: 0}         % replace with an appropriate license, or set it in xmPreamble
+
+\begin{document}   
+
+\begin{abstract}
+
+\end{abstract}
+
+\maketitle
+
+\label{xim:FractionsIntro}
+
+\section*{Introduction to Fractions}
+
+A \textbf{fraction} is an \emph{equal} part of a whole. The square below has been divided into 4 equal parts.  The fraction 
+that represents the shaded part of the square is $\textstyle \frac{1}{4},$ since 1 of the 4 parts is shaded.
+
+\begin{center}
+\begin{tikzpicture}
+  % 1. Shade the top-right quadrant (0,0 to 1.3,1.3)
+  %\fill[glaucous!60] (0,0) -- (1.3,0) -- (1.3,1.3) -- (0,1.3) -- cycle;
+
+  % 1a. Shade the top-left quadrant
+  \fill[glaucous!60] (0,0) rectangle (-1.3,1.3);
+
+  % 2. Draw the main square outline (centered at 0,0 like your circle was)
+  \draw[thick] (-1.3,-1.3) rectangle (1.3,1.3);
+
+  % 3. Draw the division lines (horizontal and vertical through the center)
+  \draw[thick] (-1.3,0) -- (1.3,0);
+  \draw[thick] (0,-1.3) -- (0,1.3);
+
+  % Label
+    \node at (0,-2) {\Large $\frac{1}{4}$};
+\end{tikzpicture}
+
+%Alt Text
+\xmalt{A square divided into four equal quadrants by a horizontal and a vertical line through its center. 
+The top-left quadrant is shaded blue, representing the fraction one-fourth.}
+
+\end{center}
+
+The \textbf{denominator} of a fraction tells you how many equal-sized pieces a whole has been divided into.  The \textbf{numerator} 
+of a fraction is how many of those pieces you are counting or considering.
+
+
+\textbf{Why do we need to divide a whole into equal parts}?
+
+Because fractions only make sense if the whole is divided into equal parts.  For example, the INCORRECT square on the left has been divided 
+into 3 parts and 1 of them is shaded.  However, we can't say that $\textstyle \frac{1}{3}$ of the square is shaded because the parts are not 
+the same size.  To correct this, we redraw the lines so that every part is the exact same size, as shown in the CORRECT square on the right.
+
+
+\begin{center}
+\begin{tikzpicture}[thick]
+  % --- INCORRECT FIGURE (Left) ---
+  \begin{scope}
+    \fill[glaucous!60] (-1.3,-1.3) rectangle (0.3,1.3);
+    \draw[ultra thick] (-1.3,-1.3) rectangle (1.3,1.3);
+    \draw (0.3,-1.3) -- (0.3,1.3);
+    \draw (0.3,0) -- (1.3,0);
+    \node at (0,-2) {\Large $\frac{1}{3}$ ?};
+
+    % INCORRECT Header and X (Stacked)
+    \node[red!80!black] at (0, 2.3) {\textbf{INCORRECT}};
+    % Shifted down slightly to 1.6/2.0
+    \draw[red!90!black, ultra thick] (-0.2, 1.6) -- (0.2, 2.0);
+    \draw[red!90!black, ultra thick] (0.2, 1.6) -- (-0.2, 2.0);
+  \end{scope}
+
+  % --- CORRECT FIGURE (Right) ---
+  \begin{scope}[xshift=4.5cm]
+    \fill[glaucous!60] (-1.3,-1.3) rectangle (-0.433,1.3);
+    \draw[ultra thick] (-1.3,-1.3) rectangle (1.3,1.3);
+    \draw (-0.433,-1.3) -- (-0.433,1.3);
+    \draw (0.433,-1.3) -- (0.433,1.3);
+    \node at (0,-2) {\Large $\frac{1}{3}$};
+
+    % CORRECT Header and Checkmark (Stacked)
+    \node[OliveGreen!90!black] at (0, 2.3) {\textbf{CORRECT}};
+    \draw[OliveGreen!90!black, ultra thick] (-0.2, 1.8) -- (0, 1.6) -- (0.3, 2.0);
+  \end{scope}
+\end{tikzpicture}
+
+% alt tex
+ \xmalt{Two squares side-by-side demonstrating the importance of equal parts in fractions. The left square is 
+ labeled INCORRECT with a red X; it is divided into three unequal parts with one large section shaded, showing 
+ that counting unequal pieces as one-third is incorrect. The right square is labeled CORRECT with a green checkmark; 
+ it is divided into three identical vertical rectangles with one shaded, correctly representing the fraction one-third.}
+
+\end{center}
+
+
+\begin{problem}  The circle below has been divided into 10 equal parts.
+
+\begin{center}
+\begin{tikzpicture}
+\draw[thick] (0,0) circle [radius=1.3cm];
+\foreach \i in {36,72,...,360}
+  \draw[thick] (0,0)--(\i:1.3cm);    % The colon signifies that polar coordinates are being used. 
+                                     % (60:.75cm) means the point that is at an angle of 60° and a 
+                                     % distance of 0.75cm from the origin. Length of radial lines - should match radius above.
+ \draw[thick, fill=glaucous!60] (0,0) --  (36:1.3) arc(36:0:1.3);   % To Draw Arc: \draw (x,y) arc (start:stop:radius);
+ \draw[thick, fill=glaucous!60] (0,0) --  (72:1.3) arc(72:36:1.3);  % Colon indicates polar coordintes (angle:length)
+ \draw[thick, fill=glaucous!60] (0,0) --  (108:1.3) arc(108:72:1.3);
+\end{tikzpicture}
+%Alt Text
+\xmalt{A circle representing a whole, divided into 10 equal pie-shaped wedges. Three adjacent wedges in the top-right section are
+ shaded blue.}
+\end{center}
+
+\normalsize % In the html this font looks larger than the problem statement above, so trying to fix. 
+What fraction of the circle is shaded?
+
+\[ \textrm{Fraction Shaded } = \frac{\answer{3}}{\answer{10}}  \]
+
+\end{problem}
+
+
+\begin{problem}  A local wildlife sanctuary covers 12 acres of protected land.  Recent data shows that 5 acres have been successfully restored with native wild flowers to support declining bee populations.
+
+
+\begin{center}
+\begin{tikzpicture}[thick]
+  % Define a simple flower shape 
+  \newcommand{\flower}[2]{
+    \foreach \a in {0,72,...,288}
+      \draw[very thin, fill=white] (#1,#2) +(\a:0.24) circle (0.12);
+    %\fill [orange!80!white] (#1,#2) circle (0.09);  %Use fill if you don't want the black outline
+    % Use \draw[fill=...] to get BOTH the black outline and the orange inside
+    \draw[very thin, fill=orange!80!white] (#1,#2) circle (0.09);
+  }
+
+  % Shade the 5 restored acres (Top row and first box of middle row)
+  \fill[glaucous!60] (0, 2.6) rectangle (5.2, 3.9);
+  \fill[glaucous!60] (0, 1.3) rectangle (1.3, 2.6);
+
+  % Draw the flowers in the shaded boxes
+  % Top row flowers
+  \flower{0.65}{3.25}
+  \flower{1.95}{3.25}
+  \flower{3.25}{3.25}
+  \flower{4.55}{3.25}
+  
+  % Middle row flower (first box)
+  \flower{0.65}{1.95}
+
+  % Draw the grid after to ensure lines are visible on top
+  \draw (0,0) rectangle (5.2, 3.9);
+  \foreach \x in {1.3, 2.6, 3.9} \draw (\x, 0) -- (\x, 3.9);
+  \draw (0, 1.3) -- (5.2, 1.3);
+  \draw (0, 2.6) -- (5.2, 2.6);
+
+  \node at (2.6,-0.6) {\textbf{Each box represents 1 acre of the sanctuary}.};
+\end{tikzpicture}
+
+% Alt Text
+\xmalt{A grid of 12 equal squares arranged in three rows of four. The four squares in the top row and the first square in
+ the middle row are shaded blue with white flowers in the center.}
+\end{center}
+
+\begin{hint}
+The denominator in each part is the number of parts the sanctuary has been divided into.  The numerator in the first part is
+the number of squares with flowers. The numerator in the second part is the number of squares without flowers.
+\end{hint}
+
+What fraction of the sanctuary's total area has been restored with wild flowers?
+
+\[ \answer{5/12} \] 
+
+
+What fraction of the sanctuary's total area has \textbf{not} been restored with wild flowers?
+
+\[ \answer{7/12} \] 
+
+\end{problem}
+
+
+\subsection*{Equivalent Fractions}
+
+The square on the left has been divided into 4 equal parts, with 2 parts shaded.  The square on the right has been divided into 2 equal parts, with 
+1 part shaded.  Since both squares are the same size and have an equal amount of shading, we can conclude that $\textstyle \frac{2}{4}$ is equivalent to
+$\textstyle \frac{1}{2}.$
+
+
+\begin{center}
+\begin{tikzpicture}[thick]
+  % --- LEFT SQUARE (2/4) ---
+  % Shade the left half (both left quadrants)
+  \fill[glaucous!60] (-1.3,-1.3) rectangle (0,1.3);
+
+  % Division lines
+  \draw (-1.3,0) -- (1.3,0); % Horizontal
+  \draw (0,-1.3) -- (0,1.3); % Vertical
+
+  % Outer Border
+  \draw (-1.3,-1.3) rectangle (1.3,1.3);
+
+  % Label
+  \node at (0,-2) {\Large $\frac{2}{4}$};
+
+  % --- EQUAL SIGN ---
+  \node at (2.2, 0) {\Huge $=$};
+
+  % --- RIGHT SQUARE (1/2) ---
+  \begin{scope}[xshift=4.4cm]
+    % Shade the left half
+    \fill[glaucous!60] (-1.3,-1.3) rectangle (0,1.3);
+
+    % Vertical division line
+    \draw (0,-1.3) -- (0,1.3);
+
+    % Outer Border
+    \draw (-1.3,-1.3) rectangle (1.3,1.3);
+
+    % Label
+    \node at (0,-2) {\Large $\frac{1}{2}$};
+  \end{scope}
+
+\end{tikzpicture}
+
+% Alt Text
+\xmalt{Two squares side-by-side, as described above, separated by an equal sign.  The square on the left represents two-fourths and the square
+on the right represents one-half.}
+
+\end{center}
+
+
+\textbf{Equivalent fractions} represent the same part of a whole, but have different numerators and denominators.  Since a whole can be divided
+into any number of equal parts, each fraction has infinitely many equivalent fractions.
+
+
+\begin{problem} Consider the circle below.
+
+\begin{center}
+\begin{tikzpicture}[thick]
+  % Original 2/6 Shading
+  \fill[glaucous!60] (0,0) -- (90:1.3) arc (90:210:1.3) -- cycle;
+  \draw (0,0) circle (1.3);
+  \foreach \a in {30, 90, 150, 210, 270, 330}
+    \draw (0,0) -- (\a:1.3);
+\end{tikzpicture}
+% alt tex
+ \xmalt{A circle divided into six equal wedge-shaped sections. Two adjacent sections on the upper-left are shaded blue.}
+\end{center}
+
+
+What fraction of the circle is shaded?
+
+\[ \textrm{Fraction Shaded } = \frac{\answer{2}}{\answer{6}} \]
+
+Which of the following circles represents an \textbf{equivalent} fraction?
+
+%The * after hspace makes certain the space won't disappear if it happens to fall at the very beginning or very end of a line (the "boundary")
+\hspace*{4em}  
+\wordChoice{
+    \choice{(a)}
+    \choice[correct]{(b)}
+    \choice{(c)}  
+    }
+
+
+\begin{center} 
+\begin{tikzpicture}[thick, scale=0.5] 
+% First Circle (a) 1/2 
+\begin{scope}[xshift=0cm] 
+\node at (0, 2.2) {\textbf{(a)}}; % Label (a) 
+\fill[glaucous!60] (0,0) -- (90:1.3) arc (90:270:1.3) -- cycle; 
+\draw (0,0) circle (1.3); 
+\draw (0,1.3) -- (0,-1.3); 
+\node at (0,-2.3) {$\frac{1}{2}$}; 
+\end{scope} 
+
+% Second Circle (b) 1/3 
+\begin{scope}[xshift=5cm] % Increased shift for better spacing 
+\node at (0, 2.2) {\textbf{(b)}}; % Label (b) 
+% Changed the arc angles to 210 and 330 to shade the bottom slice
+\fill[glaucous!60] (0,0) -- (210:1.3) arc (210:330:1.3) -- cycle; 
+\draw (0,0) circle (1.3); 
+\foreach \a in {90, 210, 330} \draw (0,0) -- (\a:1.3); 
+\node at (0,-2.3) {$\frac{1}{3}$}; 
+\end{scope} 
+
+% Third Circle (c) 1/6 
+\begin{scope}[xshift=10cm] 
+\node at (0, 2.2) {\textbf{(c)}}; % Label (c) 
+\fill[glaucous!60] (0,0) -- (30:1.3) arc (30:90:1.3) -- cycle; 
+\draw (0,0) circle (1.3); 
+\foreach \a in {30, 90, 150, 210, 270, 330} \draw (0,0) -- (\a:1.3); 
+\node at (0,-2.3) {$\frac{1}{6}$}; 
+\end{scope} 
+
+\end{tikzpicture} 
+
+\xmalt{Three circles labeled (a), (b), and (c) representing fractions. Circle (a) is divided into 2 equal parts with 1 shaded (one-half). Circle (b) is divided into 3 equal parts with 1 shaded (one-third). Circle (c) is divided into 6 equal parts with 1 shaded (one-sixth).} 
+
+\end{center}
+
+\end{problem}
+
+\begin{definition}[\textbf{Types of Fractions}]
+
+\begin{enumerate}
+\item \textbf{Proper fractions} are fractions in which the numerator is smaller
+than the denominator.  A proper fraction is always less than 1.
+
+\begin{itemize}
+        \item \textbf{Example}: \ $\frac{3}{4}$
+\end{itemize}
+
+
+\item \textbf{Improper fractions} are fractions in which the numerator is greater than
+or equal to the denominator.  An improper fraction is always greater than or equal to 1.
+
+\begin{itemize}
+        \item \textbf{Example}: \ $\frac{7}{12}$
+\end{itemize}
+
+
+\item \textbf{Mixed numbers} consist of a whole number and a fraction.  A mixed number
+is always greater than 1.
+
+\begin{itemize}
+        \item \textbf{Example}: \ $1 \frac{1}{4}$
+\end{itemize}
+
+\end{enumerate}
+
+\end{definition}
+
+\begin{problem}
+Classify each of the following fractions as a \textbf{proper fraction}, an \textbf{improper fraction} or a \textbf{mixed number}.
+
+\begin{enumerate}
+    \item $\displaystyle 2\frac{1}{2}$
+    \begin{multipleChoice}
+        \choice{Proper Fraction}
+        \choice{Improper Fraction}
+        \choice[correct]{Mixed Number}
+    \end{multipleChoice}
+
+    \item $\displaystyle \frac{11}{12}$
+    \begin{multipleChoice}
+        \choice[correct]{Proper Fraction}
+        \choice{Improper Fraction}
+        \choice{Mixed Number}
+    \end{multipleChoice}
+    
+    \item $\displaystyle \frac{15}{8}$
+    \begin{multipleChoice}
+        \choice{Proper Fraction}
+        \choice[correct]{Improper Fraction}
+        \choice{Mixed Number}
+    \end{multipleChoice}
+
+    \item $\displaystyle \frac{5}{5}$
+    \begin{multipleChoice}
+        \choice{Proper Fraction}
+        \choice[correct]{Improper Fraction}
+        \choice{Mixed Number}
+    \end{multipleChoice}
+
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+When we write the mixed number $\textstyle 1 \frac{1}{4}$ what arithmetic symbol is not written, but
+understood to be between the 1 and $\textstyle \frac{1}{4}?$
+
+\begin{multipleChoice}
+\choice{$\mathbf{\times}$}
+\choice{$\mathbf{-}$}
+\choice[correct]{$\mathbf{+}$}
+\choice{$\mathbf{\div}$}
+\end{multipleChoice}
+
+\begin{feedback}[correct]
+That's right! \ $1 \frac{1}{4} = 1 + \frac{1}{4}$
+\end{feedback}
+
+\end{problem}
+
+\subsection*{Graphing Fractions on a Number Line}
+
+To graph a \textbf{proper fraction}, divide the distance from 0 to 1 into $n$ equal parts, where $n$ is the denominator of the fraction.  Then start at 0 and use the numerator to determine the number of places to move to the right.
+
+\begin{example}
+
+Graph the \textbf{proper fraction} $\textstyle \frac{3}{4}.$ 
+
+\begin{explanation}
+  
+Since the denominator is $4,$ divide the distance from $0$ to $1$ into $4$ equal parts.  Then start at $0$ and move $3$ parts to 
+the right, since the numerator is $3.$
+
+\begin{center}
+\begin{tikzpicture}[>=stealth]
+        % Draw number line and mark 0, 1, 3/4
+        \draw[thick, <->] (0,0)--(6,0) node at (1,-0.3) {\small 0} node at (5, -0.3) {\small 1} node at (4,-0.5) {\small $\frac{3}{4}$};
+
+        %Tickmarks
+        \draw[thick] (1,-0.1)--(1, 0.1);
+        \draw[thick] (2,-0.1)--(2, 0.1);
+        \draw[thick] (3,-0.1)--(3, 0.1);
+        \draw[thick] (4,-0.1)--(4, 0.1);
+        \draw[thick] (5,-0.1)--(5, 0.1);
+
+        % 3/4 point
+        \fill (4,0) circle (2pt);
+\end{tikzpicture}
+
+% Alt Text
+\xmalt{A horizontal number line showing the interval from 0 to 1, divided into four equal segments. 
+The integer 0 is labeled at the first tick mark, and the integer 1 is labeled at the fifth tick mark. A solid black dot is placed 
+on the third tick mark from 0, which is labeled below with the fraction three-fourths.}
+\end{center}
+
+\end{explanation}
+\end{example}
+
+To graph \textbf{improper fractions}, we continue the process and divide the distances between each whole number into $n$ equal parts.
+
+\begin{example}
+
+Graph the \textbf{improper fraction} $\textstyle \frac{7}{4}.$ 
+
+\begin{explanation}
+
+Since the denominator is $4,$ divide the distance between each whole number into $4$ equal parts.  Then start at $0$ and count $7$ 
+parts to the right, since the numerator is $7.$
+
+\begin{center}
+\begin{tikzpicture}[>=stealth]
+        % Draw longer number line and mark 0, 1, 2, and fractions
+        \draw[thick, <->] (0,0)--(10,0);
+
+        % Labels below the line
+        \node at (1,-0.3) {\small 0};
+        \node at (5,-0.3) {\small 1};
+        \node at (9,-0.3) {\small 2};
+        \node at (8,-0.5) {\small $\frac{7}{4}$};
+
+        % Tickmarks (0 to 2 in quarters)
+        % 0 at 1, 1 at 5, 2 at 9. Spacing is 1 unit per 1/4.
+        \foreach \x in {1,2,3,4,5,6,7,8,9}
+          \draw[thick] (\x,-0.1)--(\x, 0.1);
+
+        % Point
+        \fill (8,0) circle (2pt); % 7/4 point
+\end{tikzpicture}
+
+% alt text 
+\xmalt{A horizontal number line extending from 0 to 2, divided into eight equal segments. The integers 0, 1, and 2 are 
+labeled. A single solid black dot is placed at the seventh tick mark from 0.  This point is labeled below the 
+line with the fraction seven-fourths.}
+\end{center}
+
+\begin{remark}
+Notice that $\frac{7}{4}$ is equivalent to $1 \frac{3}{4}$ since it lies $\frac{3}{4}$ of the way between 1 and 2.
+\end{remark}
+
+\end{explanation}
+\end{example}
+
+To graph a \textbf{mixed number}, first locate the whole number part on the number line. Next, divide the distance between 
+that whole number and the next whole number into $n$ equal parts, where $n$ is the number in the denominator.  Then start 
+at the whole number part and graph the fractional part.
+
+\begin{example}
+
+Graph the \textbf{mixed number} $\textstyle 2 \frac{1}{5}.$ 
+
+\begin{explanation}
+
+Since the denominator is $5,$ divide the distance between the whole numbers $2$ and $3$ into $5$ equal parts.  Then start at $2$ and 
+move $1$ part to the right, since the numerator is $1.$
+
+\begin{center}
+\begin{tikzpicture}[thick, >=stealth]
+  % 1. Draw the number line from -0.5 to 3.5
+  \draw[<->] (-0.5,0) -- (9.5,0);
+
+  % 2. Major Tickmarks for whole numbers 0, 1, 2, 3
+  % Placed at x=0, x=3, x=6, x=9 for clear spacing
+  \foreach \x/\label in {0/0, 3/1, 6/2, 9/3} {
+    \draw (\x, 0.15) -- (\x, -0.15) node[below] {\small \label};
+  }
+
+  % 3. Minor Tickmarks between 2 and 3 (5 equal parts)
+  % The distance between 6 and 9 is 3 units. 3 / 5 = 0.6 spacing.
+  \foreach \i in {1,2,3,4} {
+    \draw (6 + 0.6*\i, 0.1) -- (6 + 0.6*\i, -0.1);
+  }
+
+  % 4. Graph the point 2 1/5 (the first tick after 2)
+  \fill (6.6, 0) circle (2.5pt);
+
+  % Optional: Label the point itself
+  \node at (6.6, -0.5) {\small $2\frac{1}{5}$};
+\end{tikzpicture}
+
+% Alt Text
+\xmalt{A horizontal number line labeled with the whole numbers 0, 1, 2, and 3. The segment between 2 and 3 is divided into five equal parts. A 
+solid black dot is placed on the first tick mark after 2, labeled as the mixed number two and one-fifth.}
+\end{center}
+
+\end{explanation}
+\end{example}
+
+\begin{remark}
+Negative fractions can be graphed in a similar manner.
+\end{remark}
+
+
+\begin{problem}  
+  Identify the position of the letter $A$ on the number line.
+
+
+\begin{center}   
+\begin{tikzpicture}[>=stealth]
+        \draw[thick, <->] (0.5,0)--(9.5,0) node at (1,-0.3) {\small 0} node at (5, -0.3) {\small 1} node at (9, -0.3) {\small 2} node at (2.5, 0.3) {\textbf{A}};
+        %node at (8.5, 0.3) {\textbf{B}};
+        \draw[thick] (1,-0.1)--(1, 0.1);
+        \draw[thick] (1.5,-0.1)--(1.5, 0.1);
+        \draw[thick] (2,-0.1)--(2, 0.1);
+        \draw[thick] (2.5,-0.1)--(2.5, 0.1);
+        \draw[thick] (3,-0.1)--(3, 0.1);
+        \draw[thick] (3.5,-0.1)--(3.5, 0.1);
+        \draw[thick] (4,-0.1)--(4, 0.1);
+        \draw[thick] (4.5,-0.1)--(4.5, 0.1);
+        \draw[thick] (5,-0.1)--(5, 0.1);
+        \draw[thick] (5.5,-0.1)--(5.5, 0.1);
+
+        \draw[thick] (6,-0.1)--(6, 0.1);
+        \draw[thick] (6.5,-0.1)--(6.5, 0.1);
+        \draw[thick] (7,-0.1)--(7, 0.1);
+        \draw[thick] (7.5,-0.1)--(7.5, 0.1);
+        \draw[thick] (8,-0.1)--(8, 0.1);
+        \draw[thick] (8.5,-0.1)--(8.5, 0.1);
+        \draw[thick] (9,-0.1)--(9, 0.1);
+        \fill (2.5,0) circle (2pt);
+        %\fill (8.5,0) circle (2pt);
+\end{tikzpicture}
+
+\xmalt{A horizontal number line extending from 0 to 2. The distance between each whole number is divided into eight equal parts. 
+ Point A is marked with a solid black dot and is located at the third tick mark after 0.}
+ 
+\end{center}
+
+$A =\frac{\answer{3}}{\answer{8}} $
+
+
+\begin{hint}
+To find the denominator of $A,$ identify the number of spaces between each whole number.  To find the numerator, start
+at 0 and count the number of tick marks to get to $A.$
+\end{hint}
+
+
+ 
+\end{problem}
+
+
+\begin{problem}
+Identify the position of the letter $B$ on the number line.
+
+~ \\[3em]
+
+\begin{center}
+\begin{tikzpicture}[>=stealth]
+        \draw[thick, <->] (0.5,0)--(9.5,0) node at (1,-0.3) {\small 0} node at (5, -0.3) {\small 1} node at (9, -0.3) {\small 2} node at
+        (8.5, 0.3) {\textbf{B}};
+        %node at (2.5, 0.3) {\textbf{A}};
+
+        \draw[thick] (1,-0.1)--(1, 0.1);
+        \draw[thick] (1.5,-0.1)--(1.5, 0.1);
+        \draw[thick] (2,-0.1)--(2, 0.1);
+        \draw[thick] (2.5,-0.1)--(2.5, 0.1);
+        \draw[thick] (3,-0.1)--(3, 0.1);
+        \draw[thick] (3.5,-0.1)--(3.5, 0.1);
+        \draw[thick] (4,-0.1)--(4, 0.1);
+        \draw[thick] (4.5,-0.1)--(4.5, 0.1);
+        \draw[thick] (5,-0.1)--(5, 0.1);
+        \draw[thick] (5.5,-0.1)--(5.5, 0.1);
+
+        \draw[thick] (6,-0.1)--(6, 0.1);
+        \draw[thick] (6.5,-0.1)--(6.5, 0.1);
+        \draw[thick] (7,-0.1)--(7, 0.1);
+        \draw[thick] (7.5,-0.1)--(7.5, 0.1);
+        \draw[thick] (8,-0.1)--(8, 0.1);
+        \draw[thick] (8.5,-0.1)--(8.5, 0.1);
+        \draw[thick] (9,-0.1)--(9, 0.1);
+        %\fill (2.5,0) circle (2pt);
+        \fill (8.5,0) circle (2pt);
+\end{tikzpicture}
+
+% Alt Text
+ \xmalt{A horizontal number line extending from 0 to 2.  The whole numbers 0, 1 and 2 are labeled.  The distance between each whole 
+ number is divided into eight equal parts.  Point B is located at the fifteenth tick mark after 0 or equivalently at the seventh tick mark after 1.}
+ 
+\end{center}
+
+
+\begin{hint}
+To find the denominator of $B,$ identify the number of spaces between each whole number.  To find the numerator, start
+at 0 and count the number of tickmarks to get to $B.$  Equivalently, start at 1 and count the number
+of tickmarks to get to $B,$ then write the result as a mixed number.
+\end{hint}
+
+\textbf{Select all that apply}.
+
+\begin{selectAll}
+\choice[correct]{$1 \frac{7}{8}$}
+\choice{$\frac{16}{8}$}
+\choice[correct]{$\frac{15}{8}$}
+\choice{$1 \frac{5}{8}$}
+\choice{$\frac{5}{8}$}
+\choice{$\frac{7}{8}$}
+\end{selectAll}
+
+\end{problem}
+
+\begin{problem}
+Identify the position of the letter $C$ on the number line.
+
+\begin{center}
+\begin{tikzpicture}[thick, >=stealth]
+  % 1. Draw the number line from 0 to 4.5
+  \draw[<->] (-0.5,0) -- (9.5,0);
+
+
+  % 3. Major Tickmarks for whole numbers 1, 2, 3, 4
+  % Placed at intervals of 2.2 unit for clean spacing (Total 8.8 for x=4)
+  \foreach \x/\label in {0/0, 2.2/1, 4.4/2, 6.6/3, 8.8/4} {
+    \draw (\x, 0.15) -- (\x, -0.15) node[below] {\small \label};
+  }
+
+  % 4. Minor Tickmarks between each whole number (3 equal parts)
+  % Interval is 2.2 / 3 = 0.733
+  \foreach \w in {0, 2.2, 4.4, 6.6} {
+    \foreach \i in {1,2} {
+      \draw ({\w + 0.733*\i}, 0.1) -- ({\w + 0.733*\i}, -0.1);
+    }
+  }
+
+  % 5. Graph Point C at 3 2/3 (second tick after 3)
+  % 6.6 + (2 * 0.733) = 8.066
+  \fill (8.066, 0) circle (2.5pt);
+  \node at (8.066, 0.4) {\textbf{C}};
+
+\end{tikzpicture}
+% alt text
+\xmalt{A horizontal number line extending from 0 to 4. The whole numbers 0, 1, 2, 3 and 4 are labeled.  The distance between each whole number
+has been divided into three equal parts.  Point C is labeled with a solid black dot and is located at the second tick mark after 3.}
+\end{center}
+
+
+\textbf{Select all that apply}.
+
+\begin{selectAll}
+\choice{$\displaystyle 3\frac{1}{2}$}
+\choice{$3 \frac{3}{4}$}
+\choice{$\frac{2}{3}$}
+\choice{$\frac{11}{2}$}
+\choice[correct]{$3 \frac{2}{3}$}
+\choice[correct]{$\frac{11}{3}$}
+\end{selectAll}
+
+\end{problem}
+
+\section*{Negative Fractions}
+
+In the following problems, notice that the position of the negative sign changes but the value
+of the fraction remains the same.
+\begin{eqnarray*}
+\frac{-4}{2} &=& -2\\
+& & \\
+& & \\
+\frac{4}{-2} &=& -2 \\
+& & \\
+& & \\
+-\frac{4}{2} &=& -2
+\end{eqnarray*}
+Therefore, a negative sign in a fraction can be written in the numerator, the denominator or in front
+of the fraction.  However, when simplifying we typically place the negative sign in front of the fraction.
+
+
+\end{document}

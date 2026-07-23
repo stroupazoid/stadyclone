@@ -1,0 +1,244 @@
+\documentclass{ximera}[font=12pt]  % I don't think font sizing works here
+
+\title{Fractions: GCF}   % Use xmlatex all -s to compile when SERVE refuses to work.
+\author{Kelly Stady}
+\license{CC: 0}         % replace with an appropriate license, or set it in xmPreamble
+
+\begin{document}
+
+
+\begin{abstract}
+
+\end{abstract}
+
+\maketitle
+
+\label{xim:FracsGCFSimplify}
+
+
+\section*{Greatest Common Factor (GCF)}
+
+In the next section, we will simplify fractions using the largest number that evenly divides into both the numerator and denominator. 
+
+\begin{definition}
+The \textbf{greatest common factor} is the largest whole number that divides evenly into two or more numbers.  Equivalently, it is
+the largest whole number that is a factor of two or more numbers.
+
+\end{definition}
+
+
+\begin{problem} \textcolor{orange!80!black}{\textbf{True or False}}  The GCF will always be less than or equal to the smallest 
+    number in the group.
+
+\begin{multipleChoice}
+\choice[correct]{True}
+\choice{False}
+\end{multipleChoice}
+
+\begin{feedback}[correct]
+That's right!  Since the GCF evenly divides into each number, it can't be larger than the smallest number.
+\end{feedback}
+
+\end{problem}
+
+
+\begin{procedure}[\textbf{Finding the GCF Using Lists of Factors}]
+
+List the factors of each number and look for the largest number that appears in each list.  \textbf{Alternatively}, 
+only list the factors of the smallest number then look for the largest factor that evenly divides into the other number(s).
+
+\end{procedure}
+
+
+\begin{example}
+
+Find the GCF of 12 and 36. 
+
+\begin{explanation}
+
+We begin by listing the factors of each number.
+
+\begin{flushleft}
+\hspace*{8em} % Move this OUTSIDE the math block for better control
+$\begin{aligned}
+& \textbf{Factors of 12}: \ 1, 2, 3, 4, 6, 12 \\[1.5ex]
+& \textbf{Factors of 36}: \ 1, 3, 4, 6, 9, 12, 18, 36
+\end{aligned}$
+\end{flushleft}
+
+The \textit{common factors} of 12 and 36 are 1, 3, 4, 6, and 12.  So, the \textbf{greatest common factor} is 12.  
+
+
+\begin{remark}
+Notice that it is more efficient to list the factors of 12 and look for the largest number that evenly divides into 36.  
+\end{remark}
+
+\end{explanation}
+
+\end{example}
+
+
+\begin{problem}
+Find the GCF of $20$ and $30.$ 
+
+\begin{enumerate}
+\item List the factors of $20$ and $30.$
+
+\begin{multipleChoice}
+    \choice{\textbf{Factors of 20}: 1, 2, 4, 5, 20; \ \textbf{Factors of 30}: 1, 2, 3, 5, 6, 10, 15, 30}
+    \choice{\textbf{Factors of 20}: 1, 2, 4, 5, 10, 20; \ \textbf{Factors of 30}: 1, 2, 3, 5, 10, 15, 30}
+    \choice[correct]{\textbf{Factors of 20}: 1, 2, 4, 5, 10, 20; \ \textbf{Factors of 30}: 1, 2, 3, 5, 6, 10, 15, 30}
+    \choice{\textbf{Factors of 20}: 2, 4, 5, 10; \ \textbf{Factors of 30}: 2, 3, 5, 6, 10, 15}
+\end{multipleChoice}
+
+\item Based on the lists above, what is the greatest common factor (GCF) of $20$ and $30$?
+
+\[ \text{GCF} = \answer{10} \]
+
+\end{enumerate}
+
+\end{problem}
+
+
+
+INSERT VIDEO SHOWING Alternative IDEA
+
+
+
+\begin{problem}
+Find the GCF of 15 and 20 by listing the factors of both numbers or just the number 15.  Use whichever technique you prefer.
+
+\[ \textrm{GCF} = \answer{5} \]
+
+\end{problem}
+
+
+\begin{problem}
+Find the GCF of 24 and 60 by listing the factors of both numbers or just the number 24.  Use whichever technique you prefer.
+
+\[ \textrm{GCF} = \answer{12} \]
+
+\end{problem}
+
+
+\begin{procedure}[\textbf{Finding the GCF Using Prime Factorizations}]
+    
+    Find the prime factorization of each number, then multiply the common prime factors.  
+    
+\end{procedure}
+
+\begin{example}
+
+Find the GCF of 12 and 36 using prime factorizations. 
+
+\begin{explanation}
+
+We begin by finding the prime factorization of each number.
+
+\begin{eqnarray*}
+12 &=& 2 \cdot 2 \cdot 2 \cdot 3 \\
+   & & \\
+36 &=& 2 \cdot 2 \cdot 3 \cdot 3 \\
+\end{eqnarray*}
+
+The common factors are 2 and 3.  There are two factors of 2 and one factor of 3 in \textit{both} factorizations, therefore
+
+\begin{eqnarray*}
+\textrm{GCF} \  &=& 2 \cdot 2 \cdot 3 \\
+   & & \\
+   &=& \answer{12} \\
+\end{eqnarray*}
+
+
+\end{explanation}
+\end{example}
+
+\begin{problem}
+Find the GCF of 60 and 75 using their prime factorizations given below.
+
+\begin{eqnarray*}
+60 &=& 2 \cdot 2 \cdot 3 \cdot 5 \\
+   & & \\
+75 &=& 3 \cdot 5 \cdot 3 \\
+\end{eqnarray*}
+
+GCF = $\answer{15}$ 
+
+\begin{feedback}
+Excellent!  The common factors are 3 and 5.  There is one factor of 3 and one factor of 5 in \textbf{both} factorizations, so the GCF = $3 \cdot 5$ which equals 15.
+\end{feedback}
+
+\end{problem}
+
+
+\begin{problem}
+Find the GCF of 85 and 150 using their prime factorizations shown below.
+
+
+\begin{eqnarray*}
+85 &=& 5 \cdot 17 \\
+   & & \\
+150 &=& 2 \cdot 3 \cdot 5 \cdot 5 \\
+\end{eqnarray*}
+
+
+GCF = $\answer{5}$
+
+\end{problem}
+
+
+INSERT VIDEO:  Finding the GCF of 3 numbers!!!!!
+
+The GCF can be used to solve problems involving groups of things that need to be divided efficiently, with no waste.  Use what you've learned
+about finding the GCF to solve the following application problems.
+
+\begin{problem}
+  You are creating identical goodie bags for a child's birthday party.  You have \textbf{18} Airheads, \textbf{24} Tootsie Rolls and
+  \textbf{36} Kit-Kats.  What is the \textbf{greatest} number of identical goodie bags you can make if you want to use all of the candy?
+
+  \[ \textrm{Greatest Number of Goodie Bags} = \answer{6} \] 
+
+  \begin{hint}
+    To solve this, you need to find the Greatest Common Factor (GCF) of 18, 24, and 36.  List the factors for each number and find the 
+    largest one that appears in all three lists.
+  \end{hint}
+
+  Now that you know you can make identical goodie bags with no waste, how many of each candy will be in \textbf{each} bag?
+
+  \begin{itemize}
+      \item Airheads: $\answer{3}$
+      \item Tootsie Rolls: $\answer{4}$
+      \item Kit-Kats: $\answer{6}$
+  \end{itemize}
+  
+  \begin{hint}
+    Divide the number of each candy by the number of bags.  For example, $18 \div 6 = 3$ Airheads.
+  \end{hint}
+
+
+\end{problem}
+
+
+\begin{problem}
+  A carpenter has three wooden boards of different lengths: $8$ ft, $12$ ft and
+      $20$ ft.  The carpenter wants to cut all three boards into smaller pieces of equal length,
+       so that there is no scrap wood left over.  What is the longest possible length for these pieces?
+
+  \[ \textrm{Longest Length } = \answer{4} \ \textrm{feet} \] 
+
+  \begin{hint}
+    Find the GCF of 8, 12, and 20.  This is largest number that divides evenly into all three lengths and is therefore the longest length.
+  \end{hint}
+
+How many pieces will the carpenter have after cutting all three boards?
+
+  \[ \textrm{Total Pieces } = \ \answer{10} \] 
+
+  \begin{hint}
+    Divide each board's length by the GCF to see how many pieces come from each board, then add them.
+  \end{hint}
+\end{problem}
+
+
+
+\end{document}

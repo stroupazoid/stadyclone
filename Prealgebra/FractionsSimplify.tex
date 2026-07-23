@@ -1,0 +1,232 @@
+\documentclass{ximera}[font=12pt]  % I don't think font sizing works here
+
+\title{Fractions: Simplifying}   % Use xmlatex all -s to compile when SERVE refuses to work.
+\author{Kelly Stady}
+\license{CC: 0}         % replace with an appropriate license, or set it in xmPreamble
+
+\begin{document}
+
+
+\begin{abstract}
+
+\end{abstract}
+
+\maketitle
+
+\label{xim:FracsSimplify}
+
+
+\section*{Simplifying Fractions}
+
+A fraction is said to be in \textbf{simplest form} or \textbf{lowest terms} when the
+numerator and denominator have no common factors other than 1.  For example, the fraction
+$\textstyle \frac{2}{5}$ is in simplest form because 2 and 5 have no common factors.  However, the fraction
+$\textstyle \frac{4}{6}$ is not in simplest form because both 4 and 6 have a common factor of 2.  The
+process of writing a fraction in simplest form is called \textbf{simplifying} the fraction.  We will consider two methods 
+to simplify fractions.  The first method uses the GCF and the second method uses prime factorizations.
+
+\begin{procedure}[\textbf{Simplifying Fractions Using the GCF}]
+
+    Divide the numerator and denominator by the GCF.
+
+\end{procedure}
+
+\begin{example}
+
+Simplify the fraction $\displaystyle \frac{4}{12}$ using the GCF = $4.$
+
+\begin{explanation}
+
+Divide the numerator and denominator by $4$ and write the result. 
+
+\begin{align*}
+\frac{4}{12} &= \frac{4 \div 4}{12 \div 4} \\[1em]
+             &= \frac{\answer{1}}{\answer{3}}
+\end{align*}
+
+Done!
+
+We can also simplify fractions by dividing the numerator and denominator by \emph{any} common factor, however using the GCF involves just one step.
+If we didn't notice that the GCF was 4, but knew that both numbers were evenly divisible by 2, we would need two steps to simplify 
+the fraction $\textstyle \frac{4}{12}.$  First, we divide the numerator and denominator by 2, then we divide by 2 again.  
+
+
+\begin{align*}
+\frac{4}{12} &= \frac{4 \div 2}{12 \div 2} \\[1em]
+             &= \frac{\answer{2}}{\answer{6}}             \\[1em]
+             &= \frac{2 \div 2}{6 \div 2} \\[1em]
+             &= \frac{\answer{1}}{\answer{3}}
+\end{align*}
+
+
+\end{explanation}
+\end{example}
+
+
+\begin{problem}
+  Simplify the fraction $\displaystyle \frac{24}{36}$ using the GCF = $12.$
+
+  \[
+  \frac{24}{36} = \frac{\answer{2}}{\answer{3}}
+  \]
+
+\end{problem}
+
+
+
+\begin{problem}
+  Follow the steps below to simplify the fraction $\displaystyle \frac{18}{45}.$
+
+  \begin{enumerate}
+  \item Find the Greatest Common Factor (GCF) of 18 and 45.
+
+  \[ \textrm{GCF} = \answer{9}  \]
+
+  
+  \item Divide both the numerator and the denominator by the GCF to simplify.
+
+  \[ \frac{18}{45} = \frac{\answer{2}}{\answer{5}} \]
+
+  \end{enumerate}
+
+  \begin{hint}
+    List the factors for each number to find the largest one they share (GCF):
+    \begin{itemize}
+        \item Factors of 18: 1, 2, 3, 6, 9, 18
+        \item Factors of 45: 1, 3, 5, 9, 15, 45
+    \end{itemize}
+  \end{hint}
+\end{problem}
+
+\begin{procedure}[\textbf{Simplifying Fractions Using Prime Factorizations}]
+
+\begin{enumerate}
+  \item Write the prime factorization of the numbers in the numerator and denominator.  
+
+  \item Cancel (divide out) the common factors that appear in both the the numerator and denominator.
+
+  \item Multiply the remaining numbers in the numerator and denominator to find the result.
+
+\end{enumerate}
+
+\end{procedure}
+
+\begin{remark}
+To \textbf{cancel} or divide out means that we remove the common factors, since their quotient is 1.
+\end{remark}
+
+\begin{example}
+  
+Simplify the fraction $\displaystyle \frac{20}{25}$ using prime factorizations.
+
+\begin{explanation}
+
+Begin by writing the prime factorizations of 20 in the numerator and 25 in the denominator.  Since there is a common 
+factor of 5 in the numerator and denominator, we can cancel or divide out the fives since $\frac{5}{5}=1.$  Finally, we
+multiply the remaining numbers in the numerator and denominator to find the result. 
+
+\begin{align*}
+\frac{20}{25} &= \frac{2 \cdot 2 \cdot 5}{5 \cdot 5} \\[1em]
+              &= \frac{2 \cdot 2 \cdot \cancel{5}}{5 \cdot \cancel{5}} \\[1em]
+              &= \frac{4}{5}
+\end{align*}
+
+
+\end{explanation}
+\end{example}
+
+
+INSERT VIDEO of simplifying a fraction using one of these facts.
+
+\begin{problem}
+Simplify the fraction using the prime factorizations shown below.
+
+\begin{eqnarray*}
+    42 &=& 2 \cdot 3 \cdot 7 \\
+    70 &=& 2 \cdot 5 \cdot 7
+\end{eqnarray*}
+
+$\displaystyle \frac{42}{70} = \frac{\answer{3}}{\answer{5}}$
+
+  \begin{hint}
+    Write the prime factorizations in the fraction, then cancel the common prime numbers.
+    \[ \frac{42}{70} = \frac{2 \cdot 3 \cdot 7}{2 \cdot 5 \cdot 7} \]
+  \end{hint}
+
+\end{problem}
+
+
+\begin{problem}
+Simplify the fraction using whichever method you prefer.
+
+\[ \frac{33}{60} = \frac{\answer{11}}{\answer{20}}\]
+
+\begin{hint}
+   If you want to use prime factorizations, write the prime factorizations in the fraction, then cancel the common prime numbers.
+
+    \[ \frac{33}{60} = \frac{3 \cdot 11}{2 \cdot 2 \cdot 3 \cdot 5} \]
+
+  \end{hint}
+
+  \begin{hint}
+    If you want to use the Greatest Common Factor (GCF) to simplify, the factors of $33$ are $1, 3, 11, 33.$  The largest factor
+    that evenly divides into $60$ is the GCF.  
+  \end{hint}
+
+\end{problem}
+
+
+
+\begin{problem}
+  Simplify the fraction using whichever method you prefer.
+
+
+  \[ \frac{60}{126} = \frac{\answer{10}}{\answer{21}} \]
+
+  \begin{hint}
+   If you want to use prime factorizations, write the prime factorizations in the fraction, then cancel the common prime numbers.
+
+    \[ \frac{60}{126} = \frac{2 \cdot 2 \cdot 3 \cdot 5}{2 \cdot 3 \cdot 3 \cdot 7} \]
+
+  \end{hint}
+
+  \begin{hint}
+    If you want to use the Greatest Common Factor (GCF) to simplify, the factors of $60$ are $1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60.$  The
+    largest factor that evenly divides into $126$ is the GCF. 
+  \end{hint}
+
+\end{problem}
+
+
+\begin{problem}
+  A recycling center collected $54$ tons of plastic last month.  However, due to contamination (like food waste or non-recyclable items), 
+  only $21$ tons could be recycled.  What \textbf{fraction} of the collected plastic was recycled?  \textbf{Remember to simplify your answer, if possible}.
+
+  \[ \text{Fraction Recycled} = \frac{\answer{7}}{\answer{18}} \]
+
+  \begin{hint}
+    Write the fraction as the amount recycled over the total amount collected, then simplify.
+
+    \[ \frac{21}{54} \]
+  \end{hint}
+
+\end{problem}
+
+
+\begin{problem}
+An animal rescue organization saved $120$ dogs from an overcrowded shelter.  Of these dogs, $45$ were seniors who required specialized 
+medical care and longer stays before they were ready for adoption.  What \textbf{fraction} of the rescued dogs were seniors?  
+\textbf{Remember to simplify your answer, if possible}.
+
+\[ \text{Fraction of Senior Dogs} = \frac{\answer{3}}{\answer{8}} \]
+
+\begin{hint}
+Write the fraction as the number of senior dogs over the total number of dogs rescued, then simplify.
+
+\[ \frac{45}{120} \]
+\end{hint}
+\end{problem}
+
+
+\end{document}
+
