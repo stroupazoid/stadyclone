@@ -1,0 +1,8 @@
+%no-protection
+Key-Type: RSA
+Key-Length: 4096
+Subkey-Type: RSA
+Subkey-Length: 4096
+Name-Real: David Strou
+Name-Email: David.Stroup@tri-c.ed
+Expire-Date: 1y    
